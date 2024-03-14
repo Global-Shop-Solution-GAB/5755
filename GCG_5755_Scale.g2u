@@ -1,0 +1,1982 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.f_ScaleInteg..Create(BaseForm)
+Gui.f_ScaleInteg..Caption("Scale Integration")
+Gui.f_ScaleInteg..Size(6210,12345)
+Gui.f_ScaleInteg..MinX(0)
+Gui.f_ScaleInteg..MinY(0)
+Gui.f_ScaleInteg..Position(0,0)
+Gui.f_ScaleInteg..BackColor(-2147483633)
+Gui.f_ScaleInteg..MaxButton(False)
+Gui.f_ScaleInteg..MinButton(False)
+Gui.f_ScaleInteg..MousePointer(0)
+Gui.f_ScaleInteg..Sizeable(False)
+Gui.f_ScaleInteg..Event(UnLoad,f_ScaleInteg_UnLoad)
+Gui.f_ScaleInteg..FontSize(11)
+Gui.f_ScaleInteg..AlwaysOnTop(False)
+Gui.f_ScaleInteg..FontName("Tahoma")
+Gui.f_ScaleInteg..ControlBox(True)
+Gui.f_ScaleInteg..Moveable(True)
+Gui.f_ScaleInteg..ShowInTaskBar(True)
+Gui.f_ScaleInteg..TitleBar(True)
+Gui.f_ScaleInteg.lbl1.Create(Label,"1. Container Selection",True,2640,300,0,255,255,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl1.FontStyle(True,False,True,False,False)
+Gui.f_ScaleInteg.lbl1.BorderStyle(0)
+Gui.f_ScaleInteg.lbl2.Create(Label,"Part Number:",True,1380,270,0,975,1065,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl2.BorderStyle(0)
+Gui.f_ScaleInteg.lbl3.Create(Label,"Container Type:",True,1650,270,0,975,1560,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl3.BorderStyle(0)
+Gui.f_ScaleInteg.lblContSize.Create(Label,"Container Size:",True,1605,270,0,975,2040,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lblContSize.BorderStyle(0)
+Gui.f_ScaleInteg.lbl5.Create(Label,"2. Bin Selection",True,2280,315,0,255,2595,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl5.FontStyle(True,False,True,False,False)
+Gui.f_ScaleInteg.lbl5.BorderStyle(0)
+Gui.f_ScaleInteg.lbl6.Create(Label,"3. Scale Information",True,2250,285,0,255,7860,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl6.FontStyle(True,False,True,False,False)
+Gui.f_ScaleInteg.lbl6.BorderStyle(0)
+Gui.f_ScaleInteg.lbl7.Create(Label,"Beginning",True,1050,270,0,825,8160,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl7.BorderStyle(0)
+Gui.f_ScaleInteg.lbl7.FontStyle(False,False,True,False,False)
+Gui.f_ScaleInteg.lbl8.Create(Label,"lb Gross",True,870,270,0,2685,9405,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl8.BorderStyle(0)
+Gui.f_ScaleInteg.lbl9.Create(Label,"lb Tare",True,720,270,0,2760,9840,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl9.BorderStyle(0)
+Gui.f_ScaleInteg.lbl10.Create(Label,"lb Net",True,600,270,0,2820,10275,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl10.BorderStyle(0)
+Gui.f_ScaleInteg.lbl11.Create(Label,"lb APW",True,795,270,0,2730,10710,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl11.BorderStyle(0)
+Gui.f_ScaleInteg.txtQty.Create(TextBox,"0",True,2250,360,0,3780,8925,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtQty.TabStop(True)
+Gui.f_ScaleInteg.txtQty.TabIndex(6)
+Gui.f_ScaleInteg.txtGrossWt.Create(TextBox,"0",True,2250,360,0,3780,9360,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtGrossWt.TabStop(True)
+Gui.f_ScaleInteg.txtGrossWt.TabIndex(7)
+Gui.f_ScaleInteg.txtTareWt.Create(TextBox,"0",True,2250,360,0,3780,9795,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtTareWt.TabStop(True)
+Gui.f_ScaleInteg.txtTareWt.TabIndex(8)
+Gui.f_ScaleInteg.txtNetWt.Create(TextBox,"0",True,2250,360,0,3780,10230,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtNetWt.TabStop(True)
+Gui.f_ScaleInteg.txtNetWt.TabIndex(9)
+Gui.f_ScaleInteg.txtAPW.Create(TextBox,"0",True,2250,360,0,3780,10665,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtAPW.TabStop(True)
+Gui.f_ScaleInteg.txtAPW.TabIndex(10)
+Gui.f_ScaleInteg.txtPart.Create(TextBox,"",True,2250,360,0,2925,975,False,0,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.ddlContType.Create(DropDownList)
+Gui.f_ScaleInteg.ddlContType.Size(2250,390)
+Gui.f_ScaleInteg.ddlContType.Position(2925,1455)
+Gui.f_ScaleInteg.ddlContType.TabStop(True)
+Gui.f_ScaleInteg.ddlContType.TabIndex(2)
+Gui.f_ScaleInteg.ddlContType.FontSize(12)
+Gui.f_ScaleInteg.ddlContType.Enabled(True)
+Gui.f_ScaleInteg.ddlContType.Visible(True)
+Gui.f_ScaleInteg.ddlContType.Zorder(0)
+Gui.f_ScaleInteg.ddlContType.FontName("Tahoma")
+Gui.f_ScaleInteg.ddlContType.Event(SelectedIndexChanged,ddlContType_SelectedIndexChanged)
+Gui.f_ScaleInteg.cmdGetScaleWt.Create(Button)
+Gui.f_ScaleInteg.cmdGetScaleWt.Size(1965,375)
+Gui.f_ScaleInteg.cmdGetScaleWt.Position(3930,8475)
+Gui.f_ScaleInteg.cmdGetScaleWt.Caption("Get Scale Wt")
+Gui.f_ScaleInteg.cmdGetScaleWt.Event(Click,cmdGetScaleWt_Click)
+Gui.f_ScaleInteg.cmdGetScaleWt.TabStop(True)
+Gui.f_ScaleInteg.cmdGetScaleWt.TabIndex(5)
+Gui.f_ScaleInteg.cmdGetScaleWt.FontSize(12)
+Gui.f_ScaleInteg.cmdGetScaleWt.Enabled(True)
+Gui.f_ScaleInteg.cmdGetScaleWt.Visible(True)
+Gui.f_ScaleInteg.cmdGetScaleWt.Zorder(0)
+Gui.f_ScaleInteg.cmdGetScaleWt.FontName("Tahoma")
+Gui.f_ScaleInteg.cmdOK.Create(Button)
+Gui.f_ScaleInteg.cmdOK.Size(1215,375)
+Gui.f_ScaleInteg.cmdOK.Position(1665,11160)
+Gui.f_ScaleInteg.cmdOK.Caption("OK")
+Gui.f_ScaleInteg.cmdOK.Event(Click,cmdOK_Click)
+Gui.f_ScaleInteg.cmdOK.TabStop(True)
+Gui.f_ScaleInteg.cmdOK.TabIndex(11)
+Gui.f_ScaleInteg.cmdOK.FontSize(12)
+Gui.f_ScaleInteg.cmdOK.Enabled(True)
+Gui.f_ScaleInteg.cmdOK.Visible(True)
+Gui.f_ScaleInteg.cmdOK.Zorder(0)
+Gui.f_ScaleInteg.cmdOK.FontName("Tahoma")
+Gui.f_ScaleInteg.cmdCancel.Create(Button)
+Gui.f_ScaleInteg.cmdCancel.Size(1215,375)
+Gui.f_ScaleInteg.cmdCancel.Position(3360,11160)
+Gui.f_ScaleInteg.cmdCancel.Caption("Cancel")
+Gui.f_ScaleInteg.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_ScaleInteg.cmdCancel.TabStop(True)
+Gui.f_ScaleInteg.cmdCancel.TabIndex(12)
+Gui.f_ScaleInteg.cmdCancel.FontSize(12)
+Gui.f_ScaleInteg.cmdCancel.Enabled(True)
+Gui.f_ScaleInteg.cmdCancel.Visible(True)
+Gui.f_ScaleInteg.cmdCancel.Zorder(0)
+Gui.f_ScaleInteg.cmdCancel.FontName("Tahoma")
+Gui.f_ScaleInteg.GsGcBin.Create(GsGridControl)
+Gui.f_ScaleInteg.GsGcBin.Size(5670,4245)
+Gui.f_ScaleInteg.GsGcBin.Position(270,3465)
+Gui.f_ScaleInteg.GsGcBin.TabStop(True)
+Gui.f_ScaleInteg.GsGcBin.TabIndex(4)
+Gui.f_ScaleInteg.GsGcBin.Enabled(True)
+Gui.f_ScaleInteg.GsGcBin.Visible(True)
+Gui.f_ScaleInteg.GsGcBin.Zorder(0)
+Gui.f_ScaleInteg.GsGcBin.Event(CellValueChanged,GsGcBin_CellValueChanged)
+Gui.f_ScaleInteg.ddlContSize.Create(DropDownList)
+Gui.f_ScaleInteg.ddlContSize.Size(2250,390)
+Gui.f_ScaleInteg.ddlContSize.Position(2925,1935)
+Gui.f_ScaleInteg.ddlContSize.TabStop(True)
+Gui.f_ScaleInteg.ddlContSize.TabIndex(2)
+Gui.f_ScaleInteg.ddlContSize.FontSize(12)
+Gui.f_ScaleInteg.ddlContSize.Enabled(True)
+Gui.f_ScaleInteg.ddlContSize.Visible(True)
+Gui.f_ScaleInteg.ddlContSize.Zorder(0)
+Gui.f_ScaleInteg.ddlContSize.FontName("Tahoma")
+Gui.f_ScaleInteg.cmdGetBins.Create(Button)
+Gui.f_ScaleInteg.cmdGetBins.Size(1860,375)
+Gui.f_ScaleInteg.cmdGetBins.Position(3915,2505)
+Gui.f_ScaleInteg.cmdGetBins.TabStop(True)
+Gui.f_ScaleInteg.cmdGetBins.TabIndex(5)
+Gui.f_ScaleInteg.cmdGetBins.Caption("Get Bins")
+Gui.f_ScaleInteg.cmdGetBins.FontSize(12)
+Gui.f_ScaleInteg.cmdGetBins.Event(Click,cmdGetBins_Click)
+Gui.f_ScaleInteg.cmdGetBins.Enabled(True)
+Gui.f_ScaleInteg.cmdGetBins.Visible(True)
+Gui.f_ScaleInteg.cmdGetBins.Zorder(0)
+Gui.f_ScaleInteg.cmdGetBins.FontName("Tahoma")
+Gui.f_ScaleInteg.cmdAdmin.Create(Button)
+Gui.f_ScaleInteg.cmdAdmin.Size(1215,390)
+Gui.f_ScaleInteg.cmdAdmin.Position(4575,90)
+Gui.f_ScaleInteg.cmdAdmin.TabStop(True)
+Gui.f_ScaleInteg.cmdAdmin.TabIndex(11)
+Gui.f_ScaleInteg.cmdAdmin.Caption("Settings")
+Gui.f_ScaleInteg.cmdAdmin.FontSize(10)
+Gui.f_ScaleInteg.cmdAdmin.Event(Click,cmdAdmin_Click)
+Gui.f_ScaleInteg.cmdAdmin.Enabled(True)
+Gui.f_ScaleInteg.cmdAdmin.Visible(True)
+Gui.f_ScaleInteg.cmdAdmin.Zorder(0)
+Gui.f_ScaleInteg.cmdAdmin.FontName("Tahoma")
+Gui.f_ScaleInteg.txtJSS.Create(TextBox,"",True,4125,390,0,90,525,False,0,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtLoc.Create(TextBox,"",True,540,390,0,4290,525,False,0,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtCaller.Create(TextBox,"",False,1260,360,0,4860,11430,False,0,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtCaller.TabStop(True)
+Gui.f_ScaleInteg.txtCaller.TabIndex(10)
+Gui.f_ScaleInteg.ddlViewMode.Create(DropDownList)
+Gui.f_ScaleInteg.ddlViewMode.Enabled(True)
+Gui.f_ScaleInteg.ddlViewMode.Visible(True)
+Gui.f_ScaleInteg.ddlViewMode.Zorder(0)
+Gui.f_ScaleInteg.ddlViewMode.Size(2190,390)
+Gui.f_ScaleInteg.ddlViewMode.Position(2940,2985)
+Gui.f_ScaleInteg.ddlViewMode.FontName("Tahoma")
+Gui.f_ScaleInteg.ddlViewMode.FontSize(12)
+Gui.f_ScaleInteg.ddlViewMode.Event(SelectedIndexChanged,ddlViewMode_SelectedIndexChanged)
+Gui.f_ScaleInteg.lblContSize2.Create(Label,"View Mode:",True,1245,270,0,1005,3015,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lblContSize2.BorderStyle(0)
+Gui.f_ScaleInteg.lbl12.Create(Label,"Ending",True,735,270,0,4530,8160,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl12.BorderStyle(0)
+Gui.f_ScaleInteg.lbl12.FontStyle(False,False,True,False,False)
+Gui.f_ScaleInteg.lbl13.Create(Label,"Qty",True,345,270,0,2940,8970,True,0,"Arial",12,-2147483633,0,0)
+Gui.f_ScaleInteg.lbl13.BorderStyle(0)
+Gui.f_ScaleInteg.frmB4Fields.Create(Frame)
+Gui.f_ScaleInteg.frmB4Fields.Enabled(True)
+Gui.f_ScaleInteg.frmB4Fields.Visible(False)
+Gui.f_ScaleInteg.frmB4Fields.Zorder(0)
+Gui.f_ScaleInteg.frmB4Fields.Size(2520,2610)
+Gui.f_ScaleInteg.frmB4Fields.Position(120,8460)
+Gui.f_ScaleInteg.frmB4Fields.Caption("")
+Gui.f_ScaleInteg.frmB4Fields.FontName("Tahoma")
+Gui.f_ScaleInteg.frmB4Fields.FontSize(8.25)
+Gui.f_ScaleInteg.frmB4Fields.BorderStyle(0)
+Gui.f_ScaleInteg.txtQty_B4.Create(TextBox,"0",True,2250,360,0,135,495,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtQty_B4.TabStop(True)
+Gui.f_ScaleInteg.txtQty_B4.TabIndex(6)
+Gui.f_ScaleInteg.txtQty_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.txtGrossWt_B4.Create(TextBox,"0",True,2250,360,0,135,915,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtGrossWt_B4.TabStop(True)
+Gui.f_ScaleInteg.txtGrossWt_B4.TabIndex(7)
+Gui.f_ScaleInteg.txtGrossWt_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.txtTareWt_B4.Create(TextBox,"0",True,2250,360,0,135,1335,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtTareWt_B4.TabStop(True)
+Gui.f_ScaleInteg.txtTareWt_B4.TabIndex(8)
+Gui.f_ScaleInteg.txtTareWt_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.txtNetWt_B4.Create(TextBox,"0",True,2250,360,0,135,1770,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtNetWt_B4.TabStop(True)
+Gui.f_ScaleInteg.txtNetWt_B4.TabIndex(9)
+Gui.f_ScaleInteg.txtNetWt_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.txtAPW_B4.Create(TextBox,"0",True,2250,360,0,135,2190,False,2,"Arial",12,-2147483643,1)
+Gui.f_ScaleInteg.txtAPW_B4.TabStop(True)
+Gui.f_ScaleInteg.txtAPW_B4.TabIndex(10)
+Gui.f_ScaleInteg.txtAPW_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Create(Button)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Enabled(True)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Visible(True)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Zorder(0)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Size(1965,375)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Position(270,75)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.TabStop(True)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.TabIndex(5)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Caption("Get Scale Wt")
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.FontName("Tahoma")
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.FontSize(12)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Event(Click,cmdGetScaleWt_B4_Click)
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.Parent("frmB4Fields")
+Gui.f_ScaleInteg.cmdGetScaleWt_B4.ToolTip("Only get this weight if you are adding qty to an existing container.")
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.iCommID.Declare(Long,-1)
+V.Global.bRet.Declare(Boolean,False)
+V.Global.bExit.Declare(Boolean,False)
+V.Global.iIndex.Declare(Long)
+v.Global.bBinOpen.Declare(boolean)
+v.Global.sAPWPerc.Declare(string)
+v.Global.bLastLSeq.Declare(boolean,True)
+v.Global.bXferW2FGOpCode.Declare(boolean,False)
+v.global.sXferW2FGOpCode.Declare(string)
+v.Global.sDefaultBin.Declare(string)
+v.Global.sEmpNum.Declare(string)
+v.Global.bBinLoaded.Declare(Boolean)
+v.Global.bWIP.Declare(Boolean,False)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'	Author: Daniel Duncan
+'	Customer: Alco Manufacturing
+'	Program Name: Scale Integration
+'	Date Started: 12/1/2019
+'	Description: This project connects to a GSE 675 Counting Scale and posts data back to a custom form, all for the purpose of posting the quantity and bin back to the GUI or WIP to FG record.  The user launches the custom scale screen from a script button either on the GUI > Update Job, or from SFC > Transactions > WIP to Finished Goods.  He then selects the container type and size, along with an available bin.  After clicking "Get Scale Wt", the program connects to the scale and parses in the weight and quantity.  If the user then clicks OK, the quantity is posted back to the screen it was called from.  (If the user instead clicks Cancel, the program saves the data to an unfinished session if all fields were filled out.  This allows the user to bring that data back in without having to re-enter setup parameters when the APW does not fall within the percentage specified in the project's custom settings [see GCG_5755_SETTINGS.g2u] and the part's APW has to be updated.)  On the GUI, when the user clicks Process, the default bin is updated on the part, which allows the quantity to pass directly into that bin.  If on the W2FG screen, the bin is written back to the screen, accomplishing the same thing.
+'	Quote:
+'	GAP: 5755
+
+'Change Log:
+'	2/24/20 - DD - Project also works at Shipping with the Lot/Bin screen inside Shipments > New/Open.  From Script 1, the user will see the same scale interface and be able to weigh the lot/bin records issued from the lot/bin screen.  These records are then aggregated together to 1.) check if the number of issued lot/bin records equals the number of scale records, and 2.) overwrite the gross and net weights in the shipment lines and header.
+'	6/30/2020 - DD - Added logic to only launch the script if the terminal is in the table of registered terminals for this project
+'	7/23/2020 - DD - Added logic to pull bins from EY location if OB location is on the work order.  OB location does not have actual bins to stock product after W2FG.
+'	7/27/2020 - DD - Added logic to allow opening scale interface if launched from labor step that is immediately followed by an outside process and ends with a labor step with the op code.
+'	8/5/2020  - DD - Hardcoded WASH workcenter as a trigger to open the scale interface (CheckLastLaborSeq sub); added Terminal number as a field saved to the table (used by Move Ticket project customized for Alco);
+'	8/31/2020  - DD - Hardcoded B PART op code as a trigger to use a different field for the part weight
+
+	v.Local.sFile.Declare(string)
+	v.Local.bExists.Declare(Boolean)
+	v.Local.ssql.Declare(String)
+	v.Local.bState.Declare(Boolean)
+	v.Local.iRet.Declare(Long)
+	v.Local.i.Declare(Long)
+	V.Local.sData.Declare(String,"")
+	V.Local.fVal.Declare(float)
+	v.Local.sTemp.Declare(string)
+	v.Local.sSeq.Declare(string)
+	v.local.sJobSuff.Declare(string)
+		
+	'Hook 15880 - Update Jobs PreSave
+	'Hook 15840 - Update Jobs Populate
+	'Hook 15860 - Update Jobs Script 2
+	'Hook 16500 - WIPtoFG Populate
+	'Hook 16540 - WIPtoFG Script 1
+	'Hook 51100 - JB0640 Execute Hook (**THIS IS THE LABEL PRINT PROGRAM**)
+	
+	'Passed vars (GUI):
+	'	000004 - Job+Suffix
+	'	000005 - Sequence
+	'	000001 - Good Pcs
+	'	000017 - Xfer to FG
+	'	000048 - Script 1
+	'Passed vars (JB0640):
+	'	009004 - Bin
+	
+	
+	'Hook 25972 - Shipments > Open 	Post Save
+	'Hook 28532 - Shipments > New 	Post Save
+	'Hook 28534 - Shipments > New 	Pre Lot Bin
+	'Hook 16571 - LBHS Populate
+	'Hook 16574 - LBHS Pre Save
+	'Hook 16585 - LBHS Script 1
+	'Hook 25920 - Shipments > Open > Key Change
+	'Hook 28510 - Shipments > New	Populate
+		
+	'Passed vars (SHIPMENTS > NEW)
+	'	000168 - Packing List Number
+	'	**WEIGHTS WILL BE WRITTEN TO THE BDF
+	'Passed vars (SHIPMENTS > OPEN)
+	'	000003 - Packing List Number
+	'	000182 - Gross Weight
+	'Passed vars (SHIPMENTS > OPEN > MODIFY LINE)
+	'	000165 - Net Wt
+	'	000166 - Gross Wt
+	'Passed vars (LBHS)
+	'	000019 - Order Num
+	'	000022 - Line Num
+	'	000209 - Script 1
+	'	000166 - Gross Wt
+	'	000165 - Net Wt
+	
+	'Initialize the custom table needed for this project
+	f.Intrinsic.Control.CallSub(InitializeProject)
+	f.Intrinsic.Control.CallSub(GetCompanyOptions)
+	f.Intrinsic.String.LPad(v.Passed.000005,"0",6,v.Local.sSeq)
+	
+	'v.Global.sEmpNum.Set(v.Passed.009990)
+	f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+		f.Intrinsic.Control.Case(15840)		
+			'Check if terminal is registered for this project
+			f.Intrinsic.Control.CallSub(CheckTerminal)
+			
+			V.Local.sTemp.Set(V.Passed.000004)
+			f.Intrinsic.String.Split(v.Local.sTemp,"-",v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp(1),=,"OOB")
+				V.Local.sTemp.RedimPreserve(0,1)
+				v.Local.sTemp(1).Set("")
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.CallSub(CheckLastLaborSeq,"Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq)
+			
+			v.Passed.000049.Set("Enter From Scale")
+			f.Intrinsic.Control.If(v.Global.bLastLSeq,=,True,"OR",v.Global.bWIP,=,True)
+				F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000001,"LOCK",1)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Case(16500)
+			'Check if terminal is registered for this project
+			f.Intrinsic.Control.CallSub(CheckTerminal)
+			
+			v.Passed.000116.Set("Scale Intfc")
+		f.Intrinsic.Control.Caseany(15860,16540)
+			'Check if terminal is registered for this project
+			f.Intrinsic.Control.CallSub(CheckTerminal)
+			
+			'Check for last labor sequence if passed from GUi		
+			f.Intrinsic.Control.If(v.Caller.Hook,=,15860)
+				v.Global.sEmpNum.Set(v.Passed.009993)
+				f.Intrinsic.String.Split(v.Passed.000004,"-",v.Local.sTemp)
+				f.Intrinsic.Control.If(v.Local.sTemp(1),=,"OOB")
+					V.Local.sTemp.RedimPreserve(0,1)
+					v.Local.sTemp(1).Set("")
+				f.Intrinsic.Control.EndIf
+				
+				f.Intrinsic.Control.CallSub(CheckLastLaborSeq,"Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq)
+			
+				'f.Intrinsic.Control.If(v.Passed.000017,=,"Y")
+				f.Intrinsic.Control.If(v.Global.bLastLSeq,=,False,"AND",v.Global.bWIP,=,False)
+					F.Intrinsic.UI.Msgbox("This is not the last labor sequence, so scale functionality is disabled.","Error >> Labor Seq")
+					f.Intrinsic.Control.ExitSub
+				f.Intrinsic.Control.EndIf
+				
+				v.Local.sJobSuff.Set(v.Passed.000004)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0}-{1}",v.Passed.000005, v.Passed.000006,v.Local.sJobSuff)
+				'v.Local.sJobSuff.Set(v.Passed.000005)
+				v.Local.sTemp.Redim(0,1)
+				v.Local.sTemp(0).Set(v.Passed.000005)
+				v.Local.sTemp(1).Set(v.Passed.000006)
+			f.Intrinsic.Control.EndIf
+			'Get settings
+			f.Intrinsic.Control.BlockEvents
+			f.Intrinsic.Control.CallSub(GetSettings)
+			f.Intrinsic.Control.CallSub(SetDropDowns)
+			f.Intrinsic.Control.CallSub(GetPartInfo,"JobSuff",v.Local.sJobSuff,"Seq",v.Local.sSeq)
+			
+			'Check if any sessions are open for this job/suffix/seq
+			f.Intrinsic.Control.CallSub(CheckOpenSessions,"GetSet","GET","Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq)
+			f.Intrinsic.Control.UnBlockEvents
+			
+			'f.Intrinsic.Control.CallSub(CheckOpenSessions,"GetSet","GET","Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq)
+			
+			'Load bins
+			'f.Intrinsic.Control.CallSub(GetAvailableBins)
+			
+			gui.f_ScaleInteg..Show
+		f.Intrinsic.Control.Case(15880)
+			'Check if terminal is registered for this project
+			f.Intrinsic.Control.CallSub(CheckTerminal)
+			
+			v.Global.sEmpNum.Set(v.Passed.009993)
+			'If called from the GUI, update the weight record that matches the job+suffix+sequence+user and quantity with Processed=True
+			f.Intrinsic.String.Split(v.Passed.000004,"-",v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp(1),=,"OOB")
+				V.Local.sTemp.RedimPreserve(0,1)
+				v.Local.sTemp(1).Set("")
+			f.Intrinsic.Control.EndIf
+			v.Local.sSeq.Set(v.Passed.000005)
+			f.Intrinsic.String.LPad(v.Local.sSEQ,"0",6,v.Local.sSeq)
+			
+			f.Intrinsic.Control.CallSub(CheckLastLaborSeq,"Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq)
+			f.Intrinsic.Control.If(v.Global.bLastLSeq,=,True,"OR",v.Global.bWIP,=,True)
+				f.Intrinsic.Control.CallSub(UpdateWeightRecord,"Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq,"GoodPcs",v.Passed.000001)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Case(51100)
+			'Check if terminal is registered for this project
+			f.Intrinsic.Control.CallSub(CheckTerminal)
+			
+			f.Intrinsic.String.Split(v.Passed.000004,"-",v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp(1),=,"OOB")
+				V.Local.sTemp.RedimPreserve(0,1)
+				v.Local.sTemp(1).Set("")
+			f.Intrinsic.Control.EndIf
+			v.Local.sSeq.Set(v.Passed.000005)
+			f.Intrinsic.String.LPad(v.Local.sSEQ,"0",6,v.Local.sSeq)
+			f.Intrinsic.Control.CallSub(SetBinForRecord,"GetSet","GET","Job",v.Local.sTemp(0),"Suffix",v.Local.sTemp(1),"Seq",v.Local.sSeq,"GoodPcs",v.Passed.000001)
+		f.Intrinsic.Control.Case(16571)
+			'Set the text of the Script 1 button
+			v.Passed.123455.Set("Enter Scale Wt")
+		f.Intrinsic.Control.Case(16585)
+			
+			'Load the BDF to get the selected LOT/bin records.  Load those into the list of bins for the user to select from.
+			F.Intrinsic.Control.CallSub(LoadScaleFromLBHS)
+		f.Intrinsic.Control.Case(16574)
+		
+			'Verify that all records in the screen have a scale record.  Warn user if any exist that do not have a record.
+			f.Intrinsic.Control.CallSub(CheckForScaleRecords)
+		f.Intrinsic.Control.Caseany(25920,28534,28510)
+			'Capture the order no and seq, along with the packing list, and write them to a temp file
+			f.Intrinsic.Control.CallSub(SOBrwsr)
+		f.Intrinsic.Control.CaseANY(28532,25972)
+			'Shipments>New - Post Save
+			'Shipments>Open - Post Save
+			'Update DB tables with weights
+			f.Intrinsic.Control.CallSub(UpdateNewShipment)
+	f.Intrinsic.Control.EndSelect
+Program.Sub.Main.End
+
+Program.Sub.SetDropDowns.Start
+	GUI.f_ScaleInteg.ddlContSize.AddItem("LARGE")
+	GUI.f_ScaleInteg.ddlContSize.AddItem("MEDIUM")
+	GUI.f_ScaleInteg.ddlContSize.AddItem("SMALL")
+	GUI.f_ScaleInteg.ddlContSize.AddItem("XSMALL")
+	
+	GUI.f_ScaleInteg.ddlContType.AddItem("BOX")
+	GUI.f_ScaleInteg.ddlContType.AddItem("PALLET BOX")
+	GUI.f_ScaleInteg.ddlContType.AddItem("TUB")
+	GUI.f_ScaleInteg.ddlContType.AddItem("TOTE")
+
+'	f.Intrinsic.Control.If(v.Global.bWIP)
+'		gui.f_ScaleInteg.ddlViewMode.AddItem("WIP BIN")
+'		gui.f_ScaleInteg.ddlViewMode.Text("WIP BIN")
+'		gui.f_ScaleInteg.ddlViewMode.Enabled(False)
+'	f.Intrinsic.Control.Else
+		gui.f_ScaleInteg.ddlViewMode.AddItem("EMPTY")
+		gui.f_ScaleInteg.ddlViewMode.AddItem("NON-EMPTY")
+		gui.f_ScaleInteg.ddlViewMode.Text("NON-EMPTY")
+'	f.Intrinsic.Control.EndIf
+Program.Sub.SetDropDowns.End
+
+Program.Sub.cmdGetScaleWt_Click.Start
+	'Interface with the scale and get the weight
+	f.Intrinsic.Control.Try
+		gui.f_ScaleInteg.cmdGetScaleWt.Enabled(False)
+		
+		F.Intrinsic.Control.If(V.Caller.USER,=,"SUPERVSR")
+			f.Intrinsic.Control.CallSub(GetScaleWeight,"QtyField","txtQty","GrossWtField","txtGrossWt","TareWtField","txtTareWt","NetWtField","txtNetWt","APWField","txtAPW","WtBtnPushed","cmdGetScaleWt")
+			'f.Intrinsic.Control.CallSub(GetScaleWeightTest,"QtyField","txtQty","GrossWtField","txtGrossWt","TareWtField","txtTareWt","NetWtField","txtNetWt","APWField","txtAPW","WtBtnPushed","cmdGetScaleWt")
+		F.Intrinsic.Control.Else
+			f.Intrinsic.Control.CallSub(GetScaleWeight,"QtyField","txtQty","GrossWtField","txtGrossWt","TareWtField","txtTareWt","NetWtField","txtNetWt","APWField","txtAPW","WtBtnPushed","cmdGetScaleWt")
+		F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Finally
+		gui.f_ScaleInteg.cmdGetScaleWt.Enabled(True)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdGetScaleWt_Click.End
+
+Program.Sub.GetAvailableBins.Start
+	'Based on container size.  Size can be the size selected and all smaller sizes.
+	v.Local.sSQL.Declare(string)
+	v.Local.sFilter.Declare(string)
+	v.Local.sLoc.Declare(String)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtBinTemp.Exists)
+		f.Data.DataTable.Close("dtBinTemp")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.DataTable.dtBinEmpties.Exists)
+		f.Intrinsic.Control.If(v.DataView.dtBinEmpties!dvBinEmpties.Exists)
+			f.Data.DataView.Close("dtBinEmpties","dvBinEmpties")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataTable.Close("dtBinEmpties")
+	f.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!CON.OPENCOMPANYCONNECTION
+	
+	'If location is OB, look for bins in EY location.
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtLoc.text,=,"OB")
+		v.Local.sLoc.Set("EY")
+	f.Intrinsic.Control.Else
+		v.Local.sLoc.Set(v.Screen.f_ScaleInteg!txtLoc.text)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.bWIP)
+		
+		
+		
+		'Get only WIP bins
+		f.Intrinsic.String.Build("SELECT convert(0,sql_bit) as Checked, BIN+' '+LOCATION as BIN_LOC, '' AS SIZE_DESC, 0 AS SIZE_RANK, convert(0,sql_float) as TotalQtys, convert(0,sql_bit) as Updated FROM V_BIN_MASTER WHERE location = '{0}' and Staging_bin='B' ORDER BY BIN ASC;",v.Local.sLoc,v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtBinEmpties","con",v.Local.sSQL,True)
+		'f.Data.DataView.Create("dtBinTemp","dvBin",22)
+		
+		'Fill in the qtys for bins not containing this part
+		f.Intrinsic.String.Build("select bin+' '+location, isnull(sum(qty_bin),0) from v_wip_bin where job+suffix in (select job+suffix from v_job_header where part<>'{0}' and location='{1}') group by bin, location;",v.Screen.f_ScaleInteg!txtPart.Text,v.Local.sLoc,v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("dictWIPBinQtysOtherPart","con",v.Local.sSQL)
+		f.Data.Dictionary.SetDefaultReturn("dictWIPBinQtysOtherPart",0)
+		f.Data.DataTable.FillFromDictionary("dtBinEmpties","dictWIPBinQtysOtherPart","Bin_Loc","TotalQtys")
+		f.Data.Dictionary.Close("dictWIPBinQtysOtherPart")
+		f.Data.DataView.Create("dtBinEmpties","dvBinEmpties",22,"TotalQtys=0","")
+		f.Data.DataView.ToDataTable("dtBinEmpties","dvBinEmpties","dtBinTemp")
+		
+		'Fill in the qtys for this part across all jobs
+		f.Intrinsic.String.Build("select bin+' '+location, isnull(sum(qty_bin),0) from v_wip_bin where job+suffix in (select job+suffix from v_job_header where part='{0}' and location='{1}') group by bin, location;",v.Screen.f_ScaleInteg!txtPart.Text,v.Local.sLoc,v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("dictWIPBinQtys","con",v.Local.sSQL)
+		f.Data.Dictionary.SetDefaultReturn("dictWIPBinQtys",0)
+		f.Data.DataTable.FillFromDictionary("dtBinTemp","dictWIPBinQtys","Bin_Loc","TotalQtys")
+		f.Data.Dictionary.Close("dictWIPBinQtys")
+		
+		f.Data.DataView.Create("dtBinTemp","dvBin",22)
+	f.Intrinsic.Control.else
+		f.Intrinsic.Control.SelectCase(v.Screen.f_ScaleInteg!ddlContSize.text)
+			f.Intrinsic.Control.Case("LARGE")
+				V.Local.sFilter.Set("SIZE_RANK=3")
+			f.Intrinsic.Control.Case("MEDIUM")
+				V.Local.sFilter.Set("SIZE_RANK>=2")
+			f.Intrinsic.Control.Case("SMALL")
+				V.Local.sFilter.Set("SIZE_RANK>=1")
+			f.Intrinsic.Control.Case("XSMALL")
+				V.Local.sFilter.Set("SIZE_RANK>=0")
+		f.Intrinsic.Control.EndSelect
+		
+		
+		
+		'Get all bins for the supplied location
+		'Create DT of all bins and fields.  Qty must be zero.
+		f.Intrinsic.String.Build("SELECT convert(0,sql_bit) as Checked, BIN+' '+LOCATION as BIN_LOC, LTRIM(RIGHT(rtrim(BIN_DESCRIPTION),6)) AS SIZE_DESC, case RIGHT(rtrim(BIN_DESCRIPTION),6) when ' LARGE' THEN 3 WHEN 'MEDIUM' THEN 2 WHEN ' SMALL' THEN 1 WHEN 'XSMALL' THEN 0 ELSE -1 END AS SIZE_RANK, convert(0,sql_float) as TotalQtys, convert(0,sql_bit) as Updated FROM V_BIN_MASTER WHERE RIGHT(rtrim(BIN_DESCRIPTION),6) IN (' LARGE', 'MEDIUM', ' SMALL', 'XSMALL') and location = '{0}' and staging_bin<>'B' ORDER BY LTRIM(RIGHT(rtrim(BIN_DESCRIPTION),6)) DESC, BIN ASC;",v.Local.sLoc,v.Local.sSQL)
+		f.Data.DataTable.CreateFromSQL("dtBinEmpties","con",v.Local.sSQL,True)
+		
+		'Get all bins with qtys of other parts on hand, fill those into the original DT, create a DV and filter those bins with qty > 0 out, into a new DT.
+		f.Intrinsic.String.Build("select bin+' '+location AS BIN_LOC, isnull(sum(quantity),0) AS TOTALQTY FROM V_ITEM_MASTER where location='{0}' and part <> '{1}' group by bin, part, location ",v.Local.sLoc,v.Screen.f_ScaleInteg!txtPart.Text,v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("dictOtherParts","con",v.Local.sSQL)
+		f.Data.Dictionary.SetDefaultReturn("dictOtherParts",0)
+		f.Data.datatable.FillFromDictionary("dtBinEmpties","dictOtherParts","Bin_Loc","TotalQtys")
+		f.Data.Dictionary.Close("dictOtherParts")
+		f.Data.DataView.Create("dtBinEmpties","dvBinEmpties",22,"TotalQtys=0","")
+		f.Data.DataView.ToDataTable("dtBinEmpties","dvBinEmpties","dtBinTemp")
+		
+		'Get all bin qtys of the current part, fill that into the DT, create a DV, then format grid if needed
+		f.Intrinsic.String.Build("select bin+' '+location AS BIN_LOC, isnull(sum(quantity),0) AS TOTALQTY FROM V_ITEM_MASTER where location='{0}' and part = '{1}' group by bin, part, location ",v.Local.sLoc,v.Screen.f_ScaleInteg!txtPart.Text,v.Local.sSQL)
+		f.Data.Dictionary.CreateFromSQL("dictCurrentParts","con",v.Local.sSQL)
+		f.Data.Dictionary.SetDefaultReturn("dictCurrentParts",0)
+		f.Data.datatable.FillFromDictionary("dtBinTemp","dictCurrentParts","Bin_Loc","TotalQtys")
+		f.Data.Dictionary.Close("dictCurrentParts")
+		
+		'Filter by bin size
+		f.Data.DataView.Create("dtBinTemp","dvBin",22,V.Local.sFilter,"SIZE_RANK ASC")	
+		
+		f.Intrinsic.Control.If(v.DataView.dtBinTemp!dvBin.RowCount,=,0)
+			f.Intrinsic.UI.Msgbox("No open bins found.  Perform a bin-to-bin transfer to clear out the bin you are looking for.","Error >> No Open Bins")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Global.bBinLoaded,=,False)
+		'Create dtBin
+		f.Data.DataView.ToDataTable("dtBinTemp","dvBin","dtBin",True)
+		f.Data.DataView.Create("dtBin","dvBin")
+		'Initial filter should be for empties, but the user can change that later if needed
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlViewMode.Text,=,"EMPTY")
+			f.Data.DataView.SetFilter("dtBin","dvBin","TotalQtys=0")
+		F.Intrinsic.Control.Else
+			f.Data.DataView.SetFilter("dtBin","dvBin","TotalQtys>0")
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.CallSub(FormatBinGrid)
+	f.Intrinsic.Control.else
+		'Merge with dtBin
+		f.Data.DataView.ToDataTable("dtBinTemp","dvBin","dtBinInit")
+		f.Data.DataTable.DeleteRow("dtBin")
+		f.Data.DataTable.AcceptChanges("dtBin")
+		f.Data.DataTable.Merge("dtbininit","dtBin",False,2)
+		f.Data.DataTable.Close("dtbininit")
+	f.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!CON.CLOSE
+Program.Sub.GetAvailableBins.End
+
+Program.Sub.FormatBinGrid.Start
+	'gui.f_ScaleInteg.GsGcBin.AddGridviewFromDatatable("gvBin","dtBin")
+	gui.f_ScaleInteg.GsGcBin.AddGridviewFromDataview("gvBin","dtBin","dvBin")
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Checked","ReadOnly",False)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Checked","AllowEdit",True)
+	
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Bin_Loc","ReadOnly",True)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Bin_Loc","AllowEdit",False)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Bin_Loc","Caption","Bin+Loc")
+	
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","SIZE_DESC","ReadOnly",True)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","SIZE_DESC","AllowEdit",False)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","SIZE_DESC","Caption","Size")
+	
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Updated","ReadOnly",True)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Updated","AllowEdit",False)
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","Updated","Caption","Updated")
+	
+	gui.f_ScaleInteg.GsGcBin.SetColumnProperty("gvBin","SIZE_RANK","Visible",False)
+	
+	gui.f_ScaleInteg.GsGcBin.SetGridviewProperty("gvBin","OptionsFindAlwaysVisible",True)
+	gui.f_ScaleInteg.GsGcBin.MainView("gvBin")
+	
+	v.Global.bBinLoaded.Set(True)
+Program.Sub.FormatBinGrid.End
+
+Program.Sub.GetSettings.Start
+	V.Local.sRet.Declare(STRING)
+	v.Local.sCOM.Declare(string)
+	F.Global.Registry.ReadValue(0,V.Caller.CompanyCode,"APW_Perc",5755,1000,5,"",v.Global.sAPWPerc)
+	f.Intrinsic.Control.If(v.Global.sAPWPerc,=,"")
+		f.Intrinsic.UI.Msgbox("The APW percentage must be applied before the 5755 scale integration program can run.")
+		f.Intrinsic.Control.End
+	f.Intrinsic.Control.EndIf
+	F.Global.Registry.ReadValue(0,"TST","COM_PORT",5755,2000,5,"",v.Local.sCOM)
+	f.Intrinsic.Control.If(v.Local.sCOM,=,"")
+		f.Intrinsic.UI.Msgbox("The COM port must be set on this user before the program can run.")
+	f.Intrinsic.Control.Else
+		v.Global.iCommID.Set(v.Local.sCOM.Long)
+	f.Intrinsic.Control.EndIf
+Program.Sub.GetSettings.End
+
+Program.Sub.GetScaleWeightTest.Start
+	'This sub is only used for testing the workflor of the program, as it posts static data back to the screen.
+	V.Local.i.Declare(Long,0)
+	V.Local.sData.Declare(String,"")
+	V.Local.sData2.Declare(String,"")
+	v.Local.iCnt.Declare(long)
+	v.Local.bVal.Declare(boolean)
+	v.Local.sSQL.Declare(string)
+	v.Local.sWeight.Declare(string)
+	v.Local.fWt.Declare(float)
+	v.local.sGrossWt.Declare
+	v.local.sTareWt.Declare
+	v.local.sNetWt.Declare
+	v.local.sQty.Declare
+	
+	'8/31/2020 - DD - Added condition for getting the "b4" weight of the container, which will be used when adding to partially full containers.
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContType.text,=,"TUB","OR",V.Screen.f_ScaleInteg!ddlContType.TEXT,=,"PALLET BOX",v.Args.WtBtnPushed,=,"cmdGetScaleWt_B4")
+		f.Intrinsic.Control.If(v.Args.WtBtnPushed,=,"cmdGetScaleWt_B4")
+			v.Local.sGrossWt.Set(7200)
+			v.Local.sTareWt.Set(2500)
+			v.Local.sNetWt.Set(4750)
+			v.Local.sQty.Set(5)
+		f.Intrinsic.Control.Else
+			v.Local.sGrossWt.Set(12000)
+			v.Local.sTareWt.Set(2500)
+			v.Local.sNetWt.Set(9500)
+			v.Local.sQty.Set(10)
+		f.Intrinsic.Control.EndIf
+		'First 8 chars of each line is the numerical value
+		'0 - Qty
+		gui.f_ScaleInteg.[v.Args.QtyField].Text(v.Local.sQty)
+		'1 - Gross
+		gui.f_ScaleInteg.[v.Args.GrossWtField].Text(v.Local.sGrossWt)
+		'2 - Tare
+		gui.f_ScaleInteg.[v.Args.TareWtField].Text(v.Local.sTareWt)
+		'gui.f_ScaleInteg.[v.Args.TareWtField].Text(0)
+		'3 - Net
+		gui.f_ScaleInteg.[v.Args.NetWtField].Text(v.Local.sNetWt)
+		'4 - APW (Get from part)
+		f.ODBC.Connection!conx.opencompanyconnection
+			f.Intrinsic.String.Build("select lbs from v_inventory_all where part='{0}' and location='{1}';",v.Screen.f_ScaleInteg!txtPart.Text,v.Screen.f_ScaleInteg!txtLoc.Text,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.fWt)
+		f.ODBC.Connection!conx.close
+		gui.f_ScaleInteg.[v.Args.APWField].Text(v.Local.fWt.String)
+		'gui.f_ScaleInteg.txtAPW.Text("5")
+	F.Intrinsic.Control.Else
+		'Do not overwrite Qty, as we want the user to enter it manually.  Do check it though.
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg![v.Args.QtyField].text,=,"")
+			f.Intrinsic.UI.Msgbox("Qty must be filled out and numeric","Error > Qty")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.IsNumeric(v.Screen.f_ScaleInteg![v.Args.QtyField].text,v.Local.bVal)
+			f.Intrinsic.Control.If(v.local.bVal,=,False)
+				f.Intrinsic.UI.Msgbox("Qty must be filled out and numeric","Error > Qty")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		'get gross weight from scale
+		'1 - Gross
+		gui.f_ScaleInteg.txtGrossWt.Text("40")
+		f.Intrinsic.Control.CallSub(CalculateTareForBoxTote)
+	f.Intrinsic.Control.EndIf			
+	
+	f.Intrinsic.Control.CallSub(ValidateWeightVsAPW, "SaveWt", False, "APWField", v.Args.APWField)
+Program.Sub.GetScaleWeightTest.End
+
+Program.Sub.GetScaleWeight.Start
+	'SAMPLE EXPECTED OUTPUT FROM THE GSE 675 SCALE:
+	'       0 Qty  
+	'   0.794 lb    Gross
+	'   0.000 lb    Tare 
+	'   0.794 lb    Net  
+	'       0 lb    APW  
+
+	V.Local.i.Declare(Long,0)
+	V.Local.sData.Declare(String,"")
+	V.Local.sData2.Declare(String,"")
+	v.Local.iCnt.Declare(long)
+	v.Local.bVal.Declare(boolean,False)
+	v.Local.sSQL.Declare(string)
+	v.Local.sWeight.Declare(string)
+	v.Local.fWt.Declare(float)
+	v.Local.bExit.Declare(Boolean,False)
+	
+	'Read in params from scale file
+	F.Intrinsic.Control.Try
+		F.Intrinsic.Control.AddEventHandler("COMMONCOMM",DR)
+		F.Communication.Serial.SetCOMPort(v.Global.iCommID)
+		'Serial parameters:
+		'	Baud rate
+		'	Parity
+		'	Data bits
+		'	Stop bits
+		F.Communication.serial.SetParameters("9600,N,8,1")
+		F.Communication.Serial.OpenPort(True)
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.DoEvents
+	F.Intrinsic.Control.EndTry
+	
+	F.Communication.Serial.SendOutput("5755 INIT")
+	F.Intrinsic.UI.Sleep(.15)
+	
+	'Look for weight over a 5 second time-span
+	F.Intrinsic.Control.For(V.Local.i,0,20,1)
+		'F.Communication.Serial.SendOutput("#")
+		
+		F.Intrinsic.UI.Sleep(.5)
+		'Reset variables
+		v.Local.sData.Redim(0,0)
+		v.Local.sData2.Set("")
+		v.Local.bVal.Set(False)
+		
+		'Get input from the scale
+		F.Communication.Serial.GetInput(V.Local.sData)
+		f.Intrinsic.Control.If(v.Local.sData,!=,"")
+			F.Intrinsic.String.Split(V.Local.sData,V.Ambient.NewLine,V.Local.sData)
+			'8/31/2020 - DD - Added condition for getting the "b4" weight of the container, which will be used when adding to partially full containers.
+			f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContType.text,=,"TUB","OR",V.Screen.f_ScaleInteg!ddlContType.TEXT,=,"PALLET BOX",v.Args.WtBtnPushed,=,"cmdGetScaleWt_B4")
+				'Check if any array positions are out of bounds.  If so, continue loop.
+				f.Intrinsic.Control.If(v.Local.sData(0),=,"OOB")
+					v.Local.bVal.Set(True)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.sData(1),=,"OOB")
+					v.Local.bVal.Set(True)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.sData(2),=,"OOB")
+					v.Local.bVal.Set(True)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.sData(3),=,"OOB")
+					v.Local.bVal.Set(True)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.sData(4),=,"OOB")
+					v.Local.bVal.Set(True)
+				f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.If(v.Local.bVal,=,False)
+					'First 8 chars of each line is the numerical value
+					'0 - Qty
+					f.Intrinsic.String.Left(v.Local.sData(0),8,v.Local.sData2)
+					gui.f_ScaleInteg.[v.Args.QtyField].Text(v.Local.sData2.Trim)
+					'1 - Gross
+					f.Intrinsic.String.Left(v.Local.sData(1),8,v.Local.sData2)
+					gui.f_ScaleInteg.[v.Args.GrossWtField].Text(v.Local.sData2.Trim)
+					'2 - Tare
+					f.Intrinsic.String.Left(v.Local.sData(2),8,v.Local.sData2)
+					gui.f_ScaleInteg.[v.Args.TareWtField].Text(v.Local.sData2.Trim)
+					'3 - Net
+					f.Intrinsic.String.Left(v.Local.sData(3),8,v.Local.sData2)
+					gui.f_ScaleInteg.[v.Args.NetWtField].Text(v.Local.sData2.Trim)
+					'4 - APW
+					f.Intrinsic.String.Left(v.Local.sData(4),8,v.Local.sData2)
+					gui.f_ScaleInteg.[v.Args.APWField].Text(v.Local.sData2.Trim)
+					
+					v.Local.bExit.Set(True)
+				f.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				'Do not overwrite Qty, as we want the user to enter it manually.  Do check it though.
+				f.Intrinsic.Control.If(v.Screen.f_ScaleInteg![v.Args.QtyField].text,=,"")
+					f.Intrinsic.UI.Msgbox("Qty must be filled out and numeric","Error > Qty")
+					f.Intrinsic.Control.ExitSub
+				f.Intrinsic.Control.Else
+					f.Intrinsic.Math.IsNumeric(v.Screen.f_ScaleInteg![v.Args.QtyField].text,v.Local.bVal)
+					f.Intrinsic.Control.If(v.local.bVal,=,False)
+						f.Intrinsic.UI.Msgbox("Qty must be filled out and numeric","Error > Qty")
+						f.Intrinsic.Control.ExitSub
+					f.Intrinsic.Control.EndIf
+				f.Intrinsic.Control.EndIf
+				'get gross weight from scale
+				'1 - Gross
+				f.Intrinsic.String.Left(v.Local.sData(1),8,v.Local.sData2)
+				'Rest of data fields here:
+				gui.f_ScaleInteg.txtGrossWt.Text(v.Local.sData2.Trim)
+				f.Intrinsic.Control.CallSub(CalculateTareForBoxTote)
+			f.Intrinsic.Control.EndIf	
+			f.Intrinsic.Control.If(v.Local.bExit,=,True)
+				f.Intrinsic.Control.ExitFor(v.Local.i)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.i)
+	
+	F.Communication.Serial.OpenPort(False)
+	
+	'Validate the APW without saving the weight record
+	f.Intrinsic.Control.CallSub(ValidateWeightVsAPW, "SaveWt", False, "APWField", v.Args.APWField)
+Program.Sub.GetScaleWeight.End
+
+Program.Sub.GetPartInfo.Start
+	'Uses the job and suffix to get the part number
+	v.Local.sSQL.Declare(string)
+	v.Local.sJob.Declare(string)
+	v.Local.sSuffix.Declare(string)
+	v.Local.sTemp.Declare(string)
+	v.Local.sPart.Declare(string)
+	v.Local.sJSS.Declare(string)
+	
+	f.Intrinsic.String.Split(v.Args.JobSuff,"-",v.Local.sTemp)
+	v.Local.sJob.Set(v.Local.sTemp(0))
+	v.Local.sSuffix.Set(v.Local.sTemp(1))
+	f.Intrinsic.String.Build("select a.part, a.location from v_job_header a inner join v_inventory_all b on a.part=b.part and a.location=b.location where job='{0}' and suffix='{1}';",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!con.opencompanyconnection
+		f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sPart)
+	f.ODBC.Connection!con.close
+	f.Intrinsic.String.Split(v.Local.sPart,"*!*",v.Local.sPart)
+	'Set the part number
+	gui.f_ScaleInteg.txtPart.Text(v.Local.sPart(0))
+	'Set the location
+	gui.f_ScaleInteg.txtLoc.Text(v.Local.sPart(1))
+	'Set the job info
+	f.Intrinsic.String.Build("{0}-{1}",v.Args.JobSuff,v.Args.Seq,v.Local.sJSS)
+	gui.f_ScaleInteg.txtJSS.Text(v.Local.sJSS)
+Program.Sub.GetPartInfo.End
+
+Program.Sub.cmdGetBins_Click.Start
+	f.Intrinsic.Control.CallSub(ValidateReqdFields)
+Program.Sub.cmdGetBins_Click.End
+
+Program.Sub.ValidateWeightVsAPW.Start
+	'Part must have an APW filled out, and the APW % setting must be filled out (Inv > Admin > 5755 Settings)
+	v.Local.fMin.Declare(float)
+	v.Local.fMax.Declare(float)
+	v.Local.fTemp.Declare(float)
+	v.Local.sSQL.Declare(string)
+	v.Local.sWeight.Declare(string)
+	v.Local.fTareWt.Declare(float)
+	v.Local.sErrorMsg.Declare(String)
+	v.Local.sJSS.Declare(String)
+	v.Local.sOpCode.Declare(String)
+	v.Local.sPart.Declare(String)
+	v.Local.sRev.Declare(String)
+	v.Local.iPartLen.Declare(Long)
+	v.Local.sWtField.Declare(String)
+	v.Local.sMsg.Declare(String)
+	
+	f.ODBC.Connection!con.opencompanyconnection
+	
+	'Get the APW based on the presence of the op code "B PART" on the job seq
+	f.Intrinsic.String.Split(v.Screen.f_ScaleInteg!txtJSS.Text,"-",v.Local.sJSS)
+	f.Intrinsic.String.Build("select operation from v_job_operations where job='{0}' and suffix='{1}' and seq='{2}'",v.Local.sJSS(0),v.Local.sJSS(1),v.Local.sJSS(2),v.Local.sSQL)
+	f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sOpCode)
+	
+	f.Intrinsic.Control.If(v.Local.sOpCode,=,"B PART")
+		f.Intrinsic.String.Left(v.Screen.f_ScaleInteg!txtPart.text,17,v.Local.sPart)
+		f.Intrinsic.String.Len(v.Screen.f_ScaleInteg!txtPart.text,v.Local.iPartLen)
+		f.Intrinsic.Control.If(v.Local.iPartLen,>,17)
+			f.Intrinsic.String.Mid(v.Screen.f_ScaleInteg!txtPart.text,18,3,v.Local.sRev)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.String.Build("select USER50 from INV_EXTRA where part='{0}' and rev='{1}' and location='{2}';",v.Local.sPart,v.Local.sRev,v.Screen.f_ScaleInteg!txtLoc.text,v.Local.sSQL)
+		v.Local.sWtField.Set("USER50")
+	F.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("select lbs from v_inventory_all where part='{0}' and location='{1}';",v.Screen.f_ScaleInteg!txtPart.text,v.Screen.f_ScaleInteg!txtLoc.text,v.Local.sSQL)
+		V.Local.sWtField.Set("Weight")
+	f.Intrinsic.Control.EndIf
+	
+	'Get the APW from Inventory Master's 'Weight' field
+	f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sWeight)
+	
+	f.ODBC.Connection!con.close
+	f.Intrinsic.Control.If(v.Local.sWeight.float,=,0)
+		f.Intrinsic.String.Build("APW is not filled out for this part.  Please have Engineering check field {0} on Inventory Master before trying again.",v.Local.sWtField,v.Local.sMsg)
+		f.Intrinsic.UI.Msgbox(v.Local.sMsg,"Error >> Part Mstr")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Math.Div(v.Global.sAPWPerc.Float,100,v.Local.fTemp)
+	f.Intrinsic.Math.Mult(v.Local.sWeight.float,v.Local.fTemp,v.Local.fTemp)
+	f.Intrinsic.Math.Add(v.Local.sWeight.float,v.Local.fTemp,v.Local.fMax)
+	f.Intrinsic.Math.Sub(v.Local.sWeight.float,v.Local.fTemp,v.Local.fMin)
+	
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg![v.Args.APWField].text,<,v.Local.fMin,"OR",v.Screen.f_ScaleInteg![v.Args.APWField].text,>,v.Local.fMax)
+		f.Intrinsic.String.Build("APW is outside the prescribed percentage.  Please see QA to have APW rechecked.{0}{0}APW from Inv: {1}{0}APW Min/Max Range: {2}~{3}{0}APW from Scale:{4}",v.Ambient.NewLine,v.Local.sWeight,v.Local.fMin.String,v.Local.fMax.String,v.screen.f_ScaleInteg![v.Args.APWField].Text,v.local.sErrorMsg)
+		f.Intrinsic.UI.Msgbox(v.Local.sErrorMsg,"Error >> APW")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.else
+		'Verify that the tare weight is positive
+		'7/28/2020 - DD - Changed logic to only require tare weight to be > 0 if bin is empty.  If not, tare must be 0.
+		f.Intrinsic.Math.ConvertToFloat(v.Screen.f_ScaleInteg!txtTareWt.text,v.Local.fTareWt)
+		
+		'Get the bin selected, as well as its qty
+		f.Data.DataView.ToDataTable("dtbin","dvBin","dtBinTemp")
+		f.Data.DataView.Create("dtBinTemp","dvBinTemp",22,"Checked=1","")
+		f.Intrinsic.Control.If(v.DataView.dtBin!dvBin(0).TotalQtys!FieldVal,>,0)
+'			f.Intrinsic.Control.If(v.Local.fTareWt,>,0)
+'				f.Intrinsic.Control.if(v.Screen.f_ScaleInteg!txtCaller.Text,=,"")
+'					f.Intrinsic.UI.Msgbox("Select bin qty is greater than 0, so the Tare Weight must be zero.  Please reset the tare weight on the scale and try again.")
+'					f.Data.DataView.Close("dtBinTemp","dvBinTemp")
+'					f.Data.DataTable.Close("dtBinTemp")
+'					f.Intrinsic.Control.ExitSub
+'				f.Intrinsic.Control.EndIf
+'			f.Intrinsic.Control.EndIf
+'		f.Intrinsic.Control.Else
+'			f.Intrinsic.Control.If(v.Local.fTareWt,<=,0)
+'			f.Intrinsic.Control.andif(v.Screen.f_ScaleInteg!txtCaller.Text,=,"")
+''				f.Intrinsic.UI.Msgbox("The Tare Weight must be greater than zero.  Please reset the scale and try again.")
+''				f.Data.DataView.Close("dtBinTemp","dvBinTemp")
+''				f.Data.DataTable.Close("dtBinTemp")
+''				f.Intrinsic.Control.ExitSub
+'			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.fTareWt,<,0)
+			f.Intrinsic.UI.Msgbox("Tare weight cannot be negative.  Please reset the scale and try again.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Control.If(v.Args.SaveWt,=,True)
+				f.Intrinsic.Control.CallSub(SaveWtInfo,"Processed_Scale",True,"Processed_GUI",False)		
+				'Clear the WaitForDismiss modal so that qty can write back to WIPtoFG screen
+				f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtCaller.Text,!=,V.Caller.Caller)
+					f.Intrinsic.Control.CallSub(f_ScaleInteg_UnLoad)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Close("dtBinTemp","dvBinTemp")
+		f.Data.DataTable.Close("dtBinTemp")
+	f.Intrinsic.Control.EndIf
+Program.Sub.ValidateWeightVsAPW.End
+
+Program.Sub.ValidateBin.Start
+	'Bin must still be available
+	v.Local.sSQL.Declare(string)
+	v.Local.fRet.Declare(float)
+	v.Local.sBin.Declare(string)
+	f.Intrinsic.String.Split(v.Args.bin_loc," ",v.Local.sBin)
+	f.Intrinsic.String.Build("select isnull(sum(quantity),0) as TotalQty from v_item_master where bin='{0}' and location='{1}';",v.Local.sBin(0),v.Local.sBin(1),v.Local.sSQL)
+	f.ODBC.Connection!con.opencompanyconnection
+		f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.fRet)
+	f.ODBC.Connection!con.Close
+	f.Intrinsic.Control.If(v.Local.fRet,>,0)
+		v.Global.bBinOpen.Set(False)
+	f.Intrinsic.Control.Else
+		v.Global.bBinOpen.Set(True)
+	f.Intrinsic.Control.EndIf
+Program.Sub.ValidateBin.End
+
+Program.Sub.CheckLastLaborSeq.Start
+	'Check if this is the last labor seq, meaning it has the op code WIPFG.  Return flag.
+	v.Local.sSQL.Declare(string)
+	v.Local.sRet.Declare(string)
+	v.Local.sRet2.Declare(String)
+	v.Local.bExit.Declare(Boolean,False)
+	v.Local.iCnt.Declare(Long,1)
+	
+	f.Intrinsic.String.Build("select max(seq) from v_job_operations where job='{0}' and suffix='{1}' and lmo='L' and operation='{2}' and seq < 995000;",V.Args.Job, v.Args.Suffix, v.Global.sXferW2FGOpCode,v.Local.sSQL)
+	
+	f.ODBC.Connection!con.opencompanyconnection
+		f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sRet)
+	
+		f.Intrinsic.Control.If(v.Local.sRet,!=,v.Args.Seq,"OR",v.Local.sRet,=,"")
+			'Check if the sequence is a labor sequence immediately preceding one or more outside sequences.  If there is another labor step at the end with the op code, set global var bWIP and display the scale interface with WIP bins displayed.
+			f.Intrinsic.String.Build("select seq, lmo, operation, part from v_job_operations where job='{0}' and suffix='{1}' and seq >= '{2}' and seq < 995000 and lmo in ('L','O') order by seq",V.Args.Job, v.Args.Suffix,v.Args.seq,v.Local.sSQL)
+			f.Data.Datatable.CreateFromSQL("dtSeqs","con",v.Local.sSQL)
+			
+			'Iterate through the sequences.  If they follow the logic of the current seq being a labor step without the op code followed by one or more outside seqs and ending with a labor seq without the op code, set global var bWIP.
+			f.Intrinsic.Control.If(v.Datatable.dtSeqs.RowCount,>,0)
+			
+				'Determine if the WC is WASH.  If so, fire the scale screen.
+				f.Intrinsic.Control.If(v.DataTable.dtSeqs(0).Part!FieldValTrim,!=,"WASH")				
+					f.Intrinsic.Control.If(v.Datatable.dtSeqs(0).LMO!FieldValTrim,=,"L","AND",v.DataTable.dtSeqs(0).Operation!FieldValTrim,=,"")
+						'Create dv for outside seqs
+						f.Intrinsic.String.Build("LMO='O' and seq>'{0}'",v.Args.seq,v.Local.sSQL)
+						f.Data.DataView.Create("dtSeqs","dvOutsideSeqs",22,v.Local.sSQL,"Seq desc")
+						'Create dv for last labor seq
+						f.Intrinsic.String.Build("LMO='L' and Operation='{0}'",v.Global.sXferW2FGOpCode,v.Local.sSQL)
+						f.Data.DataView.Create("dtSeqs","dvLastLseq",22,v.Local.sSQL,"Seq desc")
+						'Create dv for labor seqs greater than the current seq and do not contain the wip to fg op code.  If greater than 0, exit.
+						f.Intrinsic.String.Build("LMO='L' AND SEQ>'{0}' AND OPERATION=''",v.Args.seq,v.Local.sSQL)
+						f.Data.DataView.Create("dtSeqs","dvLaborSeqs",22,v.Local.sSQL,"Seq desc")
+						
+						f.Intrinsic.Control.If(v.dataview.dtSeqs!dvLaborSeqs.RowCount,>,0)
+							v.Local.bExit.Set(True)
+						f.Intrinsic.Control.Else
+							f.Intrinsic.Control.If(v.DataView.dtSeqs!dvOutsideSeqs.RowCount,>,0,"AND",v.DataView.dtSeqs!dvLastLseq.RowCount,=,1)
+								f.Intrinsic.Control.If(v.DataView.dtSeqs!dvOutsideSeqs(0).Seq!FieldVal,<,v.DataView.dtSeqs!dvLastLseq(0).Seq!FieldVal)
+									v.Local.bExit.Set(False)
+								f.Intrinsic.Control.else
+									v.Local.bExit.Set(True)
+								f.Intrinsic.Control.EndIf
+							f.Intrinsic.Control.Else
+								v.Local.bExit.Set(True)
+							f.Intrinsic.Control.EndIf
+						f.Intrinsic.Control.EndIf
+					f.Intrinsic.Control.Else
+						v.Local.bExit.Set(True)
+					f.Intrinsic.Control.EndIf
+				
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Local.bExit)
+				v.Global.bLastLSeq.Set(False)
+				v.Global.bWIP.Set(False)
+			f.Intrinsic.Control.Else
+				v.Global.bLastLSeq.Set(False)
+				v.Global.bWIP.Set(True)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Else
+			v.Global.bLastLSeq.Set(True)
+		f.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!con.close
+Program.Sub.CheckLastLaborSeq.End
+
+Program.Sub.cmdAdmin_Click.Start
+	'Validates user's access to the settings form.
+	v.Local.sFilePath.Declare(string)
+	v.Local.bRet.Declare(boolean)
+	
+	'Check if user belongs to user group ADMIN.
+	f.Global.Security.IsInGroup(v.Caller.User,"ADMIN",V.Local.bRet)
+	f.Intrinsic.Control.If(v.Local.bRet)
+		f.Intrinsic.String.Build("{0}GCG_5755_SETTINGS.G2U",V.Caller.GasDir,V.Local.sFilePath)
+		'Disable the form >> User feedback that form cannot be used until settings screen is closed.
+		gui.f_ScaleInteg..Enabled(False)
+		'Check if user belongs to ADMIN group.  If so, open the settings script.
+		f.Global.General.CallSyncGAS(V.Local.sFilePath)
+		'Show user that form can be used again
+		gui.f_ScaleInteg..Enabled(True)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Access Denied.  User must be part of ADMIN group.","Error >> User Security")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+Program.Sub.cmdAdmin_Click.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+'Closes ODBC connection, default to connection : "con"
+f.Intrinsic.Control.If(v.ODBC!con.State, =, 1)
+	f.ODBC.Connection!con.Close
+f.Intrinsic.Control.EndIf
+
+'Generic Error message.
+f.Intrinsic.String.Build("Project GCG_5755_Scale.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+Program.Sub.ErrorMsg.End
+
+Program.Sub.CalculateTareForBoxTote.Start
+	v.Local.sSQL.Declare(string)
+	v.Local.sWeight.Declare(string)
+	v.Local.fWt.Declare(float)
+	
+	'Get the APW from Inventory Master's 'Weight' field
+	f.Intrinsic.String.Build("select lbs from v_inventory_all where part='{0}' and location='{1}';",v.Screen.f_ScaleInteg!txtPart.text,v.Screen.f_ScaleInteg!txtLoc.text,v.Local.sSQL)
+	f.ODBC.Connection!con.opencompanyconnection
+		f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sWeight)
+	f.ODBC.Connection!con.close
+	f.Intrinsic.Control.If(v.Local.sWeight.float,=,0)
+		f.Intrinsic.UI.Msgbox("APW is not filled out for this part.  Please see Engineering before trying again.","Error >> Part Mstr")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		gui.f_ScaleInteg.txtAPW.Text(v.Local.sWeight)
+	f.Intrinsic.Control.EndIf
+	'Calculate the net weight from the APW and qty
+	f.Intrinsic.Math.Mult(v.Screen.f_ScaleInteg!txtAPW.text,v.Screen.f_ScaleInteg!txtQty.text,v.Local.fWt)
+	gui.f_ScaleInteg.txtNetWt.Text(v.Local.fWt.String)
+	'Calculate the tare weight as difference between gross and net weights
+	f.Intrinsic.Math.Sub(v.Screen.f_ScaleInteg!txtgrosswt.text,v.Screen.f_ScaleInteg!txtNetWt.text,v.Local.fWt)
+	gui.f_ScaleInteg.txtTareWt.Text(v.Local.fWt.String)
+	'The tare weight must be 40 lbs or less.  This, however, is not a hard stop, so the user can continue.
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtTareWt.text,>,40)
+		f.Intrinsic.UI.Msgbox("Tare weight must be 40 lbs or less.  Please check tare weight before continuing.","Warning > Tare Weight")
+	f.Intrinsic.Control.EndIf
+Program.Sub.CalculateTareForBoxTote.End
+
+Program.Sub.ResetScaleParams.Start
+	'Scale params must be set to 0
+	F.Intrinsic.Control.Try
+		F.Intrinsic.Control.AddEventHandler("COMMONCOMM",DR)
+		F.Communication.Serial.SetCOMPort(v.Global.iCommID)
+		F.Communication.serial.SetParameters("9600,N,8,1")
+		F.Communication.Serial.OpenPort(True)
+		
+		'Command in 675 scale for reset
+		F.Communication.Serial.SendOutput("0%t~r34.1P=0%o")
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.Control.DoEvents
+		f.Intrinsic.UI.Msgbox("Error encountered resetting scale parameters")
+	f.Intrinsic.Control.Finally
+		F.Communication.Serial.OpenPort(False)
+	F.Intrinsic.Control.EndTry
+Program.Sub.ResetScaleParams.End
+
+Program.Sub.cmdCancel_Click.Start
+	'If there is data loaded into the fields, ask the user to save the session
+	v.Local.bGood.Declare(boolean,True)
+	v.Local.iRet.Declare(long)
+	
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContSize.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContType.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtQty.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtGrossWt.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtNetWt.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtQty.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtTareWt.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.bGood)
+		f.Intrinsic.UI.Msgbox("All fields are populated.  Do you want to save your session?",,4,v.Local.iRet)
+		f.Intrinsic.Control.If(v.Local.iRet,=,6)
+			f.Intrinsic.Control.CallSub(SaveWtInfo,"Processed_Scale",False,"Processed_GUI",False)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.End
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.CheckOpenSessions.Start
+	'Get open session.  If any found, ask user to reload session
+	v.Local.iRet.Declare(long)
+	v.Local.sSQL.Declare(string)
+	v.Local.sJSS.Declare(string)
+	
+	'If scale screen was not used, exit the script
+	f.Intrinsic.Control.If(v.Args.Job,=,"")
+		f.Intrinsic.Control.End
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Split(v.Screen.f_ScaleInteg!txtJSS.text,"-",v.Local.sJSS)
+	f.Intrinsic.Control.If(v.Local.sJSS(1),=,"OOB")
+		V.Local.sJSS.RedimPreserve(0,1)
+		v.Local.sJSS(1).Set("")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Args.Seq,=,"OOB")
+		V.Local.sJSS.RedimPreserve(0,1)
+		v.Local.sJSS(1).Set("")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSessions.Exists)
+		f.Data.DataTable.Close("dtSessions")
+	f.Intrinsic.Control.EndIf
+	
+	'GET = Opening scale screen and populating screen with session info
+	'SET = Getting session info so it can be updated when the GUI processes the record
+	f.Intrinsic.Control.If(v.Args.GetSet,=,"SET")
+		f.Intrinsic.String.Build("select top 1 * from gcg_5755_wtinfo where job='{0}' and suffix='{1}' and seq='{2}' and LAST_user='{3}' and sequence_key='' and processed_gui=0 AND QTY={4} order by date_last_updated desc;",v.Local.sJSS(0),v.Local.sJSS(1),v.Args.Seq,v.global.sEmpNum,V.Passed.000001,v.Local.sSQL)
+	F.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("select top 1 * from gcg_5755_wtinfo where job='{0}' and suffix='{1}' and seq='{2}' and LAST_user='{3}' and sequence_key='' and processed_gui=0 order by date_last_updated desc;",v.Local.sJSS(0),v.Local.sJSS(1),v.args.Seq,v.global.sEmpNum,v.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	F.ODBC.Connection!CON.OPENCOMPANYCONNECTION
+		f.Data.DataTable.CreateFromSQL("dtSessions","con",v.Local.sSQL,True)
+	F.ODBC.Connection!CON.CLOSE
+	f.Intrinsic.Control.If(v.DataTable.dtSessions.RowCount,>,0,"AND",v.Args.GetSet,=,"GET")
+		f.Intrinsic.UI.Msgbox("Session exists!  Do you want to reload your previous weight information?",,4,v.Local.iRet)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.Args.GetSet,=,"SET")
+		v.Local.iRet.Set(6)
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.iRet,=,6)
+		'Populate the fields in the form
+		gui.f_ScaleInteg.ddlContType.Text(v.DataTable.dtSessions(0).Cont_Type!FieldValTrim)
+		gui.f_ScaleInteg.ddlContSize.Text(v.DataTable.dtSessions(0).Cont_Size!FieldValTrim)
+		gui.f_ScaleInteg.txtGrossWt.Text(v.DataTable.dtSessions(0).Gross_Wt!FieldValTrim)
+		gui.f_ScaleInteg.txtQty.Text(v.DataTable.dtSessions(0).QTY!FieldValTrim)
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContType.text,=,"BOX","OR",V.Screen.f_ScaleInteg!ddlContType.TEXT,=,"TOTE")
+			F.Intrinsic.Control.CallSub(CalculateTareForBoxTote)
+		F.Intrinsic.Control.Else
+			'If the container type is a pallet box or a tub, it is big enough that all of the rest of the data comes from the scale
+			gui.f_ScaleInteg.txtTareWt.Text(v.DataTable.dtSessions(0).Tare_Wt!FieldValTrim)
+			gui.f_ScaleInteg.txtNetWt.Text(v.DataTable.dtSessions(0).Net_Wt!FieldValTrim)
+			gui.f_ScaleInteg.txtAPW.Text(v.DataTable.dtSessions(0).APW!FieldValTrim)
+		f.Intrinsic.Control.EndIf
+		gui.f_ScaleInteg.txtTareWt_B4.Text(v.DataTable.dtSessions(0).B4_Tare_Wt!FieldValTrim)
+		gui.f_ScaleInteg.txtNetWt_B4.Text(v.DataTable.dtSessions(0).B4_Net_Wt!FieldValTrim)
+		gui.f_ScaleInteg.txtAPW_B4.Text(v.DataTable.dtSessions(0).B4_APW!FieldValTrim)
+		gui.f_ScaleInteg.txtGrossWt_B4.Text(v.DataTable.dtSessions(0).B4_Gross_Wt!FieldValTrim)
+		gui.f_ScaleInteg.txtQty_B4.Text(v.DataTable.dtSessions(0).B4_QTY!FieldValTrim)
+		
+		'Fill the bin datatable and fill from dictionary the checked status
+		F.Intrinsic.Control.CallSub(ValidateReqdFields)
+		f.Data.Dictionary.Create("dictCheckedBin")
+		f.Data.Dictionary.AddItem("dictCheckedBin",v.DataTable.dtSessions(0).Bin!FieldValTrim,True)
+		f.Data.Dictionary.SetDefaultReturn("dictCheckedBin",False)
+		f.Data.DataTable.FillFromDictionary("dtBin","dictCheckedBin","Bin_Loc","Checked")
+		f.Data.Dictionary.Close("dictCheckedBin")
+	f.Intrinsic.Control.EndIf
+Program.Sub.CheckOpenSessions.End
+
+Program.Sub.InitializeProject.Start
+	f.Intrinsic.Control.Try
+		v.Local.bExists.Declare(boolean)
+		f.ODBC.Connection!con.opencompanyconnection
+		f.odbc.Connection!con.tableexists("GCG_5755_WTINFO",V.Local.bExists)
+		f.Intrinsic.Control.If(v.Local.bExists,=,False)
+			f.ODBC.Connection!con.execute("CREATE TABLE GCG_5755_WTINFO (ID IDENTITY DEFAULT '0' CONSTRAINT UK_ID UNIQUE USING 0,JOB CHAR(6) NOT NULL,SUFFIX CHAR(3) NOT NULL,SEQ CHAR(6) NOT NULL,SEQUENCE_KEY CHAR(10),QTY DOUBLE,GROSS_WT DOUBLE,TARE_WT DOUBLE,NET_WT DOUBLE,APW DOUBLE,LAST_USER CHAR(50) NOT NULL,DATE_LAST_UPDATED DATE NOT NULL,PROCESSED_GUI BIT DEFAULT '0' NOT NULL,BIN CHAR(10) NOT NULL,CONT_SIZE CHAR(10) NOT NULL,CONT_TYPE CHAR(10) NOT NULL,PROCESSED_SCALE BIT DEFAULT '0' NOT NULL,PROCESSED_BIN BIT DEFAULT '0' NOT NULL );")
+			f.ODBC.Connection!con.execute("ALTER TABLE GCG_5755_WTINFO ADD CONSTRAINT PK_ID PRIMARY KEY  (ID) USING 0;")
+		f.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.TableExists("GCG_5755_SHIPINFO",V.Local.bExists)
+		F.Intrinsic.Control.If(V.Local.bExists,=,False)
+			f.ODBC.Connection!con.Execute("CREATE TABLE GCG_5755_SHIPINFO (ID IDENTITY DEFAULT '0' CONSTRAINT UK_ID UNIQUE USING 0, ORDER_NUM CHAR(50), BIN CHAR(6), QTY DOUBLE, GROSS_WT DOUBLE, TARE_WT DOUBLE, NET_WT DOUBLE,APW DOUBLE, ORDER_LINE CHAR(50), PACKLIST CHAR(50));")
+		F.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.close
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.InitializeProject.End
+
+Program.Sub.GetCompanyOptions.Start
+	'Need to check if W2FG occurs on op code, and what the default bin is
+	'NOTE: THIS PROJECT ALSO NEEDS THE STD MANUFACTURING CO "PLACE INV INTO DEFAULT BIN ON INV MASTER" TO WORK RIGHT NOW. EVENTUALLY, WE WILL PASS THE BIN ON HOOK 51100 TO FULLY CONTROL THE BIN.
+	f.Intrinsic.Control.Try
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.executeandreturn("select convert(f_boolean,sql_bit) from op_header where id='401116' and sequence='0000';",v.Global.bXferW2FGOpCode)
+			f.ODBC.Connection!con.executeandreturn("select text1 from op_header where id='401116' and sequence='0001';",v.Global.sXferW2FGOpCode)
+			f.ODBC.Connection!con.executeandreturn("select text1 from op_header where id='402203' and sequence='0001';",v.Global.sDefaultBin)
+		f.ODBC.Connection!con.close
+		
+		f.Intrinsic.Control.If(v.Global.bXferW2FGOpCode,=,False,"OR",v.Global.sDefaultBin,=,"")
+			f.Intrinsic.Control.End
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.GetCompanyOptions.End
+
+Program.Sub.UpdateWeightRecord.Start
+	'Set the corresponding weight record as processed_gui=True
+	v.Local.sSQL.Declare(string)
+	v.Local.sSQL2.Declare(string)
+	v.Local.sBin.Declare(string)
+	v.Local.fQty.Declare(Float)
+	v.Local.sLoc.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sRet2.Declare(string)
+	v.Local.iMode.Declare(Long)
+	v.Local.sTempBin.Declare(String)
+	v.Local.sLastLabor.Declare(String)
+	v.Local.sDate.Declare(String)
+	v.Local.fNewWIPQty.Declare
+	f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.If(v.Caller.User,=,"SUPERVSR")
+		
+	f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("update gcg_5755_wtinfo set processed_gui=1 where job='{0}' and suffix='{1}' and seq='{2}' and last_user='{3}' and processed_gui=0 and qty-b4_qty='{4}';",v.Args.job,v.Args.suffix,v.Args.seq,v.Global.sEmpNum,v.Args.GoodPcs,v.Local.sSQL)
+		
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.execute(v.Local.sSQL)
+			f.Intrinsic.String.Build("select top 1 bin,ID,qty from gcg_5755_wtinfo where job='{0}' and suffix='{1}' and seq='{2}' and last_user='{3}' and processed_gui=1 and qty-b4_qty='{4}' order by id desc;",v.Args.job,v.Args.suffix,v.Args.seq,v.Global.sEmpNum,v.Args.GoodPcs,v.Local.sSQL)
+			f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+			
+			'sRet(0) = Bin + Location
+			'sRet(1) = ID
+			'sRet(2) = Qty
+			
+			'f.Intrinsic.String.Split(v.Local.sRet(0)," ",v.Local.sBin)
+			v.Local.sBin.Redim(0,1)
+			f.Intrinsic.String.Right(v.Local.sRet(0),2,v.Local.sBin(1))
+			f.Intrinsic.String.left(v.Local.sRet(0),6,v.Local.sBin(0))
+			
+			'sBin(0) = Selected Bin
+			'sBin(1) = Selected Location
+			
+			'Get the part information for the work order
+			f.Intrinsic.String.Build("select part, location from v_job_header where job='{0}' and suffix='{1}';",v.Args.job,v.Args.suffix,v.Local.sSQL)
+			f.Data.DataTable.CreateFromSQL("dtPart","con",v.Local.sSQL)
+			f.Intrinsic.Control.If(v.DataTable.dtPart.RowCount,>,0)
+				'Change loc of bin to EY if 
+				'Update the default bin for the part on inventory master
+				f.Intrinsic.Control.If(v.DataTable.dtPart(0).Location!FieldVal,=,"OB")
+					v.Local.sTempBin.Set("TEMP")
+				f.Intrinsic.Control.Else
+					v.Local.sTempBin.Set(v.Local.sBin(0))
+				f.Intrinsic.Control.EndIf
+				'Set the default bin for the part so that WIP to FG places it in the right bin.
+				f.Intrinsic.String.Build("update inventory_mstr set bin='{0}' where part='{1}' and location='{2}';",v.Local.sTempBin,v.DataTable.dtPart(0).Part!FieldVal,v.DataTable.dtPart(0).Location!FieldVal,v.Local.sSQL)
+				f.ODBC.Connection!con.execute(v.Local.sSQL)
+				'Get the selected bin's current weight and save it to the record
+				f.Intrinsic.String.Build("select sum(quantity) as Qty from v_item_master where bin='{0}' and location='{1}' and part='{2}';",v.Local.sBin(0),v.local.sBin(1),v.DataTable.dtPart(0).Part!FieldVal,v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.fQty)
+				f.Intrinsic.String.Build("update gcg_5755_wtinfo set bin_b4_qty = {0} where id='{1}';",v.Local.fQty,v.Local.sRet(1),v.Local.sSQL)
+				f.ODBC.Connection!con.Execute(v.Local.sSQL)
+				'If the bin selected is a WIP bin, write that data to the WIP bins table
+				f.Intrinsic.Control.If(v.Global.bWIP)
+					'Take what is already there and add the difference in Qty before and after to it
+					
+					v.Local.fQty.Set(v.Local.sRet(2).float)
+					f.Intrinsic.String.DateString(v.Ambient.Now,v.Local.sDate)
+					'Get the last labor seq on the job.  This is where the WIP qty should be stored.
+					f.Intrinsic.String.Build("select top 1 seq from v_job_operations where job='{0}' and suffix='{1}' and seq < 995000 and lmo='L' order by seq desc",v.Args.job,v.Args.suffix,v.Local.sSQL)
+					f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sLastLabor)
+					F.Intrinsic.String.Build("select * from wip_bin where JOB='{0}' AND SUFFIX='{1}' AND SEQUENCE='{2}' and bin='{3}'",V.Args.JOB,V.Args.SUFFIX,v.Local.sLastLabor,v.Local.sBin(0),V.Local.sSQL)
+					f.Data.DataTable.CreateFromSQL("dtWIPBin","con",V.Local.sSQL)
+					f.Intrinsic.Control.If(v.DataTable.dtWIPBin.RowCount,>,0)
+						'Update the Bin_B4_Qty field for WIP records
+						f.Intrinsic.String.Build("update gcg_5755_wtinfo set bin_b4_qty = {0} where id='{1}';",v.Local.fQty,v.Local.sRet(1),v.Local.sSQL)
+						f.ODBC.Connection!con.Execute(v.Local.sSQL)
+						f.Intrinsic.Math.Add(v.DataTable.dtWIPBin(0).Qty_Bin!FieldValFloat,v.args.goodpcs,v.Local.fNewWIPQty)
+						'f.Intrinsic.Math.Add(v.DataTable.dtWIPBin(0).Qty_Bin!FieldValFloat,v.Local.fQty,v.Local.fQty)
+						f.Intrinsic.String.Build("update wip_bin set qty_bin={0} where job='{1}' and suffix='{2}' and sequence='{3}' and bin='{4}';",v.Local.fNewWIPQty,v.Args.job,v.Args.suffix,v.Local.sLastLabor,v.Local.sBin(0),v.Local.sSQL)
+					f.Intrinsic.Control.Else
+						f.Intrinsic.String.Build("insert into wip_bin (job, suffix, sequence, part, location, bin, description, qty_bin, date_wipbin, bin_user) values ('{0}','{1}','{2}','WIP','{3}','{4}','{5}',{6},'{7}','{8}')",v.Args.job,v.Args.suffix,v.Local.sLastLabor,v.Local.sBin(1),v.Local.sBin(0),"WIP FROM SCALE",V.args.goodpcs,v.Local.sDate,"SCALE",v.Local.sSQL)
+					f.Intrinsic.Control.EndIf					
+					f.ODBC.Connection!con.Execute(v.Local.sSQL)
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.close
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.UpdateWeightRecord.End
+
+Program.Sub.SetBinForRecord.Start
+	'Sets the bin for the new FG record so that we do not have to perform a separate bin to bin transfer transaction
+	v.Local.sSQL.Declare(string)
+	v.Local.sBin.Declare(string)
+	v.Local.sJob.Declare(string)
+	v.Local.sSuffix.Declare(string,"")
+	v.Local.iLen.Declare(long)
+	v.Local.sBin2Bin.Declare(string)
+	v.Local.sDelimiter.Declare(String)
+	V.Local.sFile.Declare(String)
+	V.Local.sFQN.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sPartLoc.Declare(String)
+	
+	f.Intrinsic.Control.Try
+	'Passed variables:
+	'	009000 - Job+Suffix
+	'	009002 - Seq
+	'	009004 - Bin
+	
+		'Set the job
+		f.Intrinsic.String.Left(v.Passed.009000,6,v.Local.sJob)
+		'Set the suffix
+		f.Intrinsic.String.Len(v.Passed.009000,v.Local.iLen)
+		f.Intrinsic.Control.If(v.Local.iLen,>,6)
+			f.Intrinsic.String.Right(v.Passed.009000,3,v.Local.sSuffix)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("select top 1 bin, trans_from_ob, qty from gcg_5755_wtinfo where job='{0}' and suffix='{1}' and seq='{2}' and last_user='{3}' and processed_bin=0 and processed_gui=1 and processed_scale=1 order by id desc;",v.local.sjob,v.local.ssuffix,v.passed.009002,v.caller.user.Trim,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.ODBC.Connection!con.executeandreturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+			f.Intrinsic.String.Split(v.Local.sRet(0)," ",v.Local.sBin)
+			f.Intrinsic.Control.If(v.Local.sRet(1),=,"Y")
+				'Set the bin to TEMP, which is used as the holding area for product at the OB location.
+				f.Intrinsic.String.Build("select part, location from v_job_header where job='{0}' and suffix='{1}';",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+				f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.sPartLoc)
+				f.Intrinsic.String.Split(v.Local.sPartLoc,"*!*",v.Local.sPartLoc)
+				'Create a bin to bin transfer transaction to process after the W2FG transaction
+				F.Intrinsic.String.Build("{0},{0}",V.Ambient.DblQuote,V.Local.sDelimiter)
+				'Parameters:
+				'	0 - Part
+				'	1 - From Location
+				'	2 - Qty
+				'	3 - From Bin
+				'	4 - To Bin
+				'	5 - ??
+				'	6 - ??
+				'	7 - ??
+				'	8 - ??
+				'	9 - ??
+				'	10 - To Location
+				'	11 - ??
+				'	12 - User
+				'	13 - Date
+				F.Intrinsic.String.Build("{0}{14}{1}{14}{2}{14}{3}{14}{4}{14}{5}{14}{6}{14}{7}{14}{8}{14}{9}{14}{10}{14}{11}{14}{12}{14}{13}",v.Local.sPartLoc(0),v.Local.sPartLoc(1),V.Local.sRet(2),"TEMP",V.Local.sBin(0),"","","","","","EY","Y",V.Caller.User,V.Ambient.Date.formatYYYYMMDD,V.Local.sDelimiter,V.Local.sBin2Bin)
+				'Create the file and call the wrapper to process bin transfer
+				F.Intrinsic.String.Concat("W",V.Caller.CompanyCode,V.Caller.Terminal,"BIN2BINTRNS",V.Local.sFile)
+				F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Local.sFile,V.Local.sFQN)
+				F.Intrinsic.File.String2File(V.Local.sFQN,V.Local.sBin2Bin)
+				
+				F.Intrinsic.Task.LaunchGSSSync("LOT054UP","-c",V.Local.sFile)
+			f.Intrinsic.Control.EndIf
+				
+			f.Intrinsic.String.Build("update gcg_5755_wtinfo set processed_bin=1 where job='{0}' and suffix='{1}' and seq='{2}' and last_user='{3}' and processed_bin=0 and processed_gui=1 and processed_scale=1;",v.Args.job,v.Args.suffix,v.Args.seq,v.caller.user.Trim,v.Local.sSQL)
+				f.ODBC.Connection!con.execute(v.Local.sSQL)
+		f.ODBC.Connection!con.close
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.SetBinForRecord.End
+
+Program.Sub.SOBrwsr.Start
+	v.Local.sTitles.Declare(string)
+	v.Local.iWidths.Declare(long)
+	v.Local.sRet.Declare(string)
+	v.Local.sFile.Declare(string)
+	v.Local.sFilePath.Declare(string)
+	v.Local.bExists.Declare(boolean,False)
+	
+	f.Intrinsic.Control.Try
+		'We are going to write a temp file, so build its file path and delete one left over from last session if it exists
+		f.Intrinsic.String.Build("{0}{1}GCG_5755_Temp.txt",v.Caller.LocalGSSTempDir,v.Caller.Terminal,v.Local.sFilePath)
+		f.Intrinsic.File.Exists(v.Local.sFilePath,v.Local.bExists)
+		f.Intrinsic.Control.if(v.Local.bExists)
+			f.Intrinsic.File.DeleteFile(v.Local.sFilePath)
+		f.Intrinsic.Control.EndIf
+				
+		'Grab the packing list number from the screen
+		f.Intrinsic.Control.If(v.Caller.Caller,=,"ORD099GI")
+			v.Local.sFile.Set(v.Passed.000003)
+			f.Intrinsic.String.LPad(v.Local.sFile,"0",6,v.Local.sFile)
+		F.Intrinsic.Control.Else
+			v.Local.sFile.Set(v.Passed.000168)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.File.String2File(v.Local.sFilePath,v.Local.sFile)
+			
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.SOBrwsr.End
+
+Program.Sub.SaveWtInfo.Start
+	'Save the data from the scale into a session record
+	v.Local.sJSS.Declare(string)
+	v.Local.sFilter.Declare(string)
+	v.Local.sTransferFromOB.Declare(String,"N")
+	
+	f.Intrinsic.String.Split(v.Screen.f_ScaleInteg!txtJSS.text,"-",v.Local.sJSS)
+	f.ODBC.Connection!con.opencompanyconnection	
+		'Create a temp DT from the DV in the grid
+		f.Data.DataTable.AcceptChanges("dtbin")
+		f.Data.DataView.Create("dtbin","dvBinSelected",22,"Checked=True","")
+		'Filter to only the bin selected
+		'f.Data.DataView.SetFilter("dtBin","dvBin","Checked=True")
+		
+		'If the location is not filled out, we assume the weight is going toward a shipment rather than a job.  In that case, add the data to a datatable and set the current row as Updated=True
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtCaller.text,!=,"")
+			'Find the row index for the bin selected
+			f.Intrinsic.String.Build("Bin='{0}'",v.DataView.dtBin!dvBinSelected(0).Bin_Loc!FieldVal,v.local.sFilter)
+			f.Data.DataView.SetFilter("dtShipInfo","dvShipInfo",v.Local.sFilter)
+			f.Intrinsic.Control.If(v.DataView.dtShipInfo!dvShipInfo.RowCount,=,0)
+				'Add a row to the dt
+				f.Data.DataTable.AddRow("dtShipInfo","ID",0,"ORDER_NUM",v.Local.sJSS(0),"order_line",v.Local.sJSS(1),"Bin",v.DataView.dtBin!dvBinSelected(0).Bin_Loc!FieldVal,"Qty",V.Screen.f_ScaleInteg!txtQty.TEXT,"GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt.TEXT,"TARE_WT",V.Screen.f_ScaleInteg!txtTareWt.TEXT,"NET_WT",V.Screen.f_ScaleInteg!txtNetWt.TEXT,"APW",V.Screen.f_ScaleInteg!txtAPW.TEXT,"Updated",True,"PACKLIST",V.Local.sJSS(2))
+				'f.Data.DataView.SetValue("dtBin","dvBin",0,"Updated",True,"Checked",False)
+				f.Data.DataTable.SetValue("dtbin",v.DataView.dtBin!dvBinSelected(0).datatableindex,"Updated",True,"Checked",False)
+			f.Intrinsic.Control.Else
+				'Write to the row in the dataview
+				f.Data.DataView.SetValue("dtShipInfo","dvShipInfo",0,"Qty",V.Screen.f_ScaleInteg!txtQty.TEXT,"GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt.TEXT,"TARE_WT",V.Screen.f_ScaleInteg!txtTareWt.TEXT,"NET_WT",V.Screen.f_ScaleInteg!txtNetWt.TEXT,"APW",V.Screen.f_ScaleInteg!txtAPW.TEXT,"Updated",True)
+				f.Data.DataTable.SetValue("dtbin",v.DataView.dtBin!dvBinSelected(0).datatableindex,"Updated",True,"Checked",False)
+			f.Intrinsic.Control.EndIf
+			
+			'Clear the fields
+			gui.f_ScaleInteg.txtAPW.Text("")
+			gui.f_ScaleInteg.txtGrossWt.Text("")
+			gui.f_ScaleInteg.txtTareWt.Text("")
+			gui.f_ScaleInteg.txtNetWt.Text("")
+			gui.f_ScaleInteg.txtQty.Text("")
+			gui.f_ScaleInteg.ddlContType.Text("")
+			gui.f_ScaleInteg.txtAPW_B4.Text("")
+			gui.f_ScaleInteg.txtGrossWt_B4.Text("")
+			gui.f_ScaleInteg.txtTareWt_B4.Text("")
+			gui.f_ScaleInteg.txtNetWt_B4.Text("")
+			gui.f_ScaleInteg.txtQty_B4.Text("")
+		f.Intrinsic.Control.Else
+			'If the location is OB, set the TransferFromOB field as Y.
+			f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtLoc.Text,=,"OB")
+				v.Local.sTransferFromOB.Set("Y")
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.DataTable.dtSessions.RowCount,>,0)
+				f.Data.DataTable.SetValue("dtSessions",0,"JOB",v.Local.sJSS(0),"SUFFIX",v.Local.sJSS(1),"SEQ",v.Local.sJSS(2),"SEQUENCE_KEY","","QTY",V.Screen.f_ScaleInteg!txtQty.TEXT,"GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt.TEXT,"TARE_WT",V.Screen.f_ScaleInteg!txtTareWt.TEXT,"NET_WT",V.Screen.f_ScaleInteg!txtNetWt.TEXT,"APW",V.Screen.f_ScaleInteg!txtAPW.TEXT,"LAST_USER",v.Global.sEmpNum,"DATE_LAST_UPDATED",V.Ambient.Date.PervasiveDate,"PROCESSED_GUI",v.Args.Processed_GUI,"BIN",v.DataView.dtBin!dvBinSelected(0).Bin_Loc!FieldValTrim,"CONT_SIZE",V.Screen.f_ScaleInteg!ddlContSize.TEXT,"CONT_TYPE",V.Screen.f_ScaleInteg!ddlContType.TEXT,"PROCESSED_SCALE",v.Args.Processed_Scale,"PROCESSED_BIN",False,"TRANS_FROM_OB",V.Local.sTransferFromOB,"TERMINAL",V.Caller.Terminal,"B4_GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt_B4.Text,"B4_TARE_WT",V.Screen.f_ScaleInteg!txtTareWt_B4.Text,"B4_NET_WT",V.Screen.f_ScaleInteg!txtNetWt_B4.Text,"B4_QTY",V.Screen.f_ScaleInteg!txtQty_B4.Text,"B4_APW",V.Screen.f_ScaleInteg!txtAPW_B4.Text)
+				F.Data.DataTable.SAVETODB("dtSessions","con","GCG_5755_WTINFO","ID",256)
+			f.Intrinsic.Control.Else
+				f.Data.DataTable.AddRow("dtSessions","JOB",v.Local.sJSS(0),"SUFFIX",v.Local.sJSS(1),"SEQ",v.Local.sJSS(2),"SEQUENCE_KEY","","QTY",V.Screen.f_ScaleInteg!txtQty.TEXT,"GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt.TEXT,"TARE_WT",V.Screen.f_ScaleInteg!txtTareWt.TEXT,"NET_WT",V.Screen.f_ScaleInteg!txtNetWt.TEXT,"APW",V.Screen.f_ScaleInteg!txtAPW.TEXT,"LAST_USER",v.Global.sEmpNum,"DATE_LAST_UPDATED",V.Ambient.Date.PervasiveDate,"PROCESSED_GUI",v.Args.Processed_GUI,"BIN",v.DataView.dtBin!dvBinSelected(0).Bin_Loc!FieldValTrim,"CONT_SIZE",V.Screen.f_ScaleInteg!ddlContSize.TEXT,"CONT_TYPE",V.Screen.f_ScaleInteg!ddlContType.TEXT,"PROCESSED_SCALE",v.Args.Processed_Scale,"PROCESSED_BIN",False,"TRANS_FROM_OB",V.Local.sTransferFromOB,"TERMINAL",V.Caller.TERMINAL,"B4_GROSS_WT",V.Screen.f_ScaleInteg!txtGrossWt_B4.Text,"B4_TARE_WT",V.Screen.f_ScaleInteg!txtTareWt_B4.Text,"B4_NET_WT",V.Screen.f_ScaleInteg!txtNetWt_B4.Text,"B4_QTY",V.Screen.f_ScaleInteg!txtQty_B4.Text,"B4_APW",V.Screen.f_ScaleInteg!txtAPW_B4.Text)
+				F.Data.DataTable.SAVETODB("dtSessions","con","GCG_5755_WTINFO","ID",128)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Close("dtbin","dvBinSelected")
+	f.ODBC.Connection!con.close
+Program.Sub.SaveWtInfo.End
+
+Program.Sub.ddlContType_SelectedIndexChanged.Start
+	'Set the qty field enabled/disabled
+	f.Intrinsic.Control.SelectCase(v.Screen.f_ScaleInteg!ddlContType.text)
+		f.Intrinsic.Control.Caseany("TUB", "PALLET BOX")
+			GUI.f_ScaleInteg.txtQty.Enabled(False)
+			GUI.f_ScaleInteg.txtQty.Text("")
+		f.Intrinsic.Control.CaseElse
+			GUI.f_ScaleInteg.txtQty.Enabled(True)
+	f.Intrinsic.Control.EndSelect
+Program.Sub.ddlContType_SelectedIndexChanged.End
+
+Program.Sub.cmdOK_Click.Start
+	'If all fields are filled out, send the qty to the caller field
+	V.Local.bGood.Declare(boolean,True)
+	v.Local.sBin.Declare(string)
+	v.Local.sMsg.Declare(String)
+	
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtQty.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtNetWt.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.bGood,=,False)
+		f.Intrinsic.UI.Msgbox("Weight and Quantity must be filled out to proceed.")
+	f.Intrinsic.Control.Else
+		'Check for bad values from scale
+		V.Local.bGood.Set(True)
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtAPW.Text,=,"OOB")
+			v.Local.bGood.Set(False)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtGrossWt.Text,=,"OOB")
+			v.Local.bGood.Set(False)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtNetWt.Text,=,"OOB")
+			v.Local.bGood.Set(False)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtQty.Text,=,"OOB")
+			v.Local.bGood.Set(False)
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtTareWt.Text,=,"OOB")
+			v.Local.bGood.Set(False)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.bGood,=,False)
+			f.Intrinsic.UI.Msgbox("One or more fields contain bad data from the scale.  Please reprint and try again.")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		
+		'Verify that there is only one bin selected and that the bin is not taken
+		f.Data.DataTable.acceptchanges("dtBin")
+		f.Data.DataView.SetFilter("dtBin","dvBin","Checked=True")
+		f.Intrinsic.Control.If(v.DataView.dtBin!dvBin.RowCount,>,1)
+			f.Intrinsic.UI.Msgbox("Multiple bins selected.  Please only choose one bin.","Error >> Multiple Bins")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.ElseIf(v.DataView.dtBin!dvBin.RowCount,=,0)
+			f.Intrinsic.UI.Msgbox("No bins selected.  Please choose a bin.","Error >> No Bins Selected")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Screen.f_ScaleInteg!txtCaller.TEXT,!=,"")
+				V.Global.bBinOpen.Set(True)
+			F.Intrinsic.Control.Else
+				V.Global.bBinOpen.Set(True)
+				f.Data.DataView.ToDataTable("dtBin","dvBin","dtBinChecked")
+				'f.Intrinsic.Control.CallSub(ValidateBin,"Bin_Loc",v.DataTable.dtBinChecked(0).Bin_Loc!FieldVal)
+			F.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Global.bBinOpen)
+				'Validate the APW is within acceptable range for this part				
+				f.Intrinsic.Control.CallSub(ValidateWeightVsAPW, "SaveWt", True, "APWField", "txtAPW")
+			f.Intrinsic.Control.Else
+				f.Intrinsic.UI.Msgbox("The bin is no longer available.  Please select another bin.","Error >> Bin Unavailable")
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+Program.Sub.cmdOK_Click.End
+
+Program.Sub.f_ScaleInteg_UnLoad.Start
+	v.Local.fVal.Declare(float)
+	v.Local.fValB4.Declare(float)
+	'If this is weight info for a shipment, save the data
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!txtCaller.text,!=,"")
+		f.Intrinsic.Control.CallSub(SaveShipInfo)
+	f.Intrinsic.Control.Else
+		'Hook 15860 - Update Jobs Script 2
+		f.Intrinsic.Control.If(v.Caller.Hook,=,15860)		
+			F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000001,"LOCK",0)
+			f.Intrinsic.Math.ConvertToFloat(v.Screen.f_ScaleInteg!txtQty.Text,v.Local.fVal)		
+			f.Intrinsic.Math.ConvertToFloat(v.Screen.f_ScaleInteg!txtQty_B4.Text,v.Local.fValB4)
+			f.Intrinsic.Math.Sub(v.Local.fVal,v.Local.fValB4,v.Local.fVal)
+			v.Passed.000001.Set(v.Local.fVal)
+			F.Intrinsic.UI.ChangeCallerProperty(V.Passed.000001,"LOCK",1)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.Math.ConvertToFloat(v.Screen.f_ScaleInteg!txtQty.Text,v.Local.fVal)	
+			v.Passed.000015.Set(v.Local.fVal)
+			f.Data.DataView.SetFilter("dtBin","dvBin","Checked=True")
+			v.Passed.000011.Set(v.DataView.dtBin!dvBin(0).Bin_Loc!FieldValTrim)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.End
+Program.Sub.f_ScaleInteg_UnLoad.End
+
+Program.Sub.SaveShipInfo.Start
+	v.Local.sSQL.Declare(String)
+	v.Local.sTemp.Declare(String)
+	f.Intrinsic.Control.Try
+		'If there are any records in the datatable, save them.
+		f.Intrinsic.Control.If(v.DataTable.dtShipInfo.RowCount,>,0)
+			f.Data.DataTable.RemoveColumn("dtShipInfo","Updated")
+			f.Intrinsic.String.Split(v.Screen.f_ScaleInteg!txtJSS.Text,"-",v.Local.sTemp)
+			f.Intrinsic.String.Build("delete from gcg_5755_shipinfo where order_num='{0}' and order_line='{1}' and packlist='{2}'",v.Local.sTemp(0),v.Local.sTemp(1),v.Local.sTemp(2),v.Local.sSQL)
+			f.ODBC.Connection!con.opencompanyconnection
+				f.ODBC.Connection!con.Execute(v.Local.sSQL)
+				f.Data.DataTable.SaveToDB("dtShipInfo","con","GCG_5755_SHIPINFO","ID",128)
+			f.ODBC.Connection!con.close
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.SaveShipInfo.End
+
+Program.Sub.ValidateReqdFields.Start
+	'Both DDL's must have something filled out (size only if this weight record is for a job, meaning that lcoation will be filled out).  Once done, get available bins
+	v.Local.bGood.Declare(boolean,True)
+	
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContSize.text,=,"",AND,V.Screen.f_ScaleInteg!txtCaller.TEXT,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlContType.text,=,"")
+		v.Local.bGood.Set(False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.Local.bGood)
+		f.Intrinsic.Control.CallSub(GetAvailableBins)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.Control.DoEvents
+	f.Intrinsic.Control.EndIf
+Program.Sub.ValidateReqdFields.End
+
+Program.Sub.LoadScaleFromLBHS.Start
+	v.Local.iCnt.Declare(long)
+	v.Local.iRowCnt.Declare(long)
+	v.Local.sTemp.Declare(string)
+	v.Local.sSQL.Declare(string)
+	v.Local.sFilePath.Declare(string)
+	v.Local.bExists.Declare(boolean)
+	f.Intrinsic.Control.Try
+		'Load the BDF into memory
+		f.Intrinsic.BDF.Load("AUX001","AUX001")
+		'Get row count for looping
+		f.Intrinsic.BDF.ReadRowCount("AUX001",v.Local.iRowCnt)
+		'Decrement rowcount var since BDF indexes start at 0
+		f.Intrinsic.Math.Sub(v.Local.iRowCnt,1,v.Local.iRowCnt)
+		'Create datatable to hold the lot/bin info
+		f.Data.DataTable.Create("dtBin",True)
+		f.Data.DataTable.AddColumn("dtBin","Checked","boolean",False)
+		f.Data.DataTable.AddColumn("dtBin","Bin_Loc","string")
+		f.Data.DataTable.AddColumn("dtBin","size_desc","string")
+		f.Data.DataTable.AddColumn("dtBin","size_rank","string")
+		f.Data.DataTable.AddColumn("dtBin","totalqtys","float")
+		f.Data.DataTable.AddColumn("dtBin","Updated","boolean",False)
+		'Make sure that there is at least one selected record
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.iRowCnt,1)
+		
+			f.Intrinsic.BDF.ReadRow("AUX001",v.Local.iCnt,v.Local.sTemp)
+			f.Intrinsic.string.Split(v.Local.sTemp,"|~|",v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp(6),>,0)
+				f.Data.DataTable.AddRow("dtBin","Bin_Loc",v.Local.sTemp(2),"TotalQtys",v.Local.sTemp(6))
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Intrinsic.Control.If(v.DataTable.dtBin.RowCount,>,0)
+			'Fill in the data needed for saving in the next screen
+			f.Intrinsic.String.GSSPartString(v.Passed.000001,v.Passed.000002,v.Local.sTemp)
+			gui.f_ScaleInteg.txtPart.Text(v.Local.sTemp)
+			gui.f_ScaleInteg.txtLoc.Text(v.Passed.000003)
+			'	Load in the packing list from the temp file for this terminal
+			f.Intrinsic.String.Build("{0}{1}GCG_5755_Temp.txt",v.Caller.LocalGSSTempDir,v.Caller.Terminal,v.Local.sFilePath)
+			f.Intrinsic.File.Exists(v.Local.sFilePath,v.Local.bExists)
+			f.Intrinsic.Control.if(v.Local.bExists)
+				F.Intrinsic.File.File2String(v.Local.sFilePath,v.Local.sTemp)
+			f.Intrinsic.Control.EndIf
+			gui.f_ScaleInteg.txtJSS.Text(v.Local.sTemp)	
+			'Pad the line num and prepend
+			f.Intrinsic.String.LPad(v.Passed.000022,"0",3,v.Local.sTemp)
+			f.Intrinsic.String.Build("{0}-{1}",v.Local.sTemp,v.Screen.f_ScaleInteg!txtJSS.Text,v.Local.sTemp)
+			gui.f_ScaleInteg.txtJSS.Text(v.Local.sTemp)	
+			'Pad the order num and prepend
+			f.Intrinsic.String.LPad(v.Passed.000019,"0",7,v.Local.sTemp)
+			f.Intrinsic.String.Build("{0}-{1}",v.Local.sTemp,v.Screen.f_ScaleInteg!txtJSS.Text,v.Local.sTemp)
+			gui.f_ScaleInteg.txtJSS.Text(v.Local.sTemp)	
+			
+			f.Intrinsic.String.Split(v.Local.sTemp,"-",v.Local.sTemp)
+			
+			'Post the caller screen
+			gui.f_ScaleInteg.txtCaller.Text(V.Caller.Caller)
+			
+			f.ODBC.Connection!con.opencompanyconnection
+				'Fill in the bin descriptions
+				f.Intrinsic.String.Build("select bin, bin_description FROM v_bin_master where location='{0}';",v.Passed.000023,v.Local.sSQL)
+				f.Data.Dictionary.CreateFromSQL("dictBinDesc","con",v.Local.sSQL)
+				f.Data.Dictionary.SetDefaultReturn("dictBinDesc","")
+				f.Data.DataTable.FillFromDictionary("dtBin","dictBinDesc","Bin_Loc","size_desc")
+				f.Data.Dictionary.Close("dictBinDesc")
+				
+				'Fill in records that have had weight updated already
+				f.Intrinsic.String.Build("select * from gcg_5755_shipinfo where order_num='{0}' and order_line='{1}' and packlist='{2}';",v.Local.sTemp(0),v.Local.sTemp(1),v.Local.sTemp(2),v.Local.sSQL)
+				f.Data.DataTable.CreateFromSQL("dtShipInfo","con",v.Local.sSQL,True)
+				f.Data.DataTable.AddColumn("dtShipInfo","Updated","boolean",True)
+				f.Data.Dictionary.CreateFromdatatable("dictBinUpdated","dtShipInfo","Bin","Updated")
+				f.Data.Dictionary.SetDefaultReturn("dictBinUpdated",False)
+				f.Data.DataTable.FillFromDictionary("dtBin","dictBinUpdated","Bin_LOC","Updated")
+				f.Data.Dictionary.Close("dictBinUpdated")
+				f.Data.DataView.Create("dtShipInfo","dvShipInfo",22)
+			f.ODBC.Connection!con.Close
+			'Bind the datatable to the bin grid
+			f.Data.DataView.Create("dtBin","dvBin",22)
+			f.Intrinsic.Control.CallSub("FormatBinGrid")
+			'Hide fields not needed for shipments
+			gui.f_ScaleInteg.lblContSize.Visible(False)
+			gui.f_ScaleInteg.ddlContSize.Visible(False)
+			GUI.f_ScaleInteg.cmdGetBins.Visible(False)
+						
+			'Get settings
+			f.Intrinsic.Control.CallSub(GetSettings)
+			f.Intrinsic.Control.CallSub(SetDropDowns)
+			
+			'Set the view mode to NON-EMPTY, so that passed bin qtys will be displayed by default
+			gui.f_ScaleInteg.ddlViewMode.Text("NON-EMPTY")
+			
+			gui.f_ScaleInteg..Show
+			
+			'When finished weighing pieces, 
+		f.Intrinsic.Control.Else
+			f.Intrinsic.UI.Msgbox("No records selected.  Please select a record to initiate the scale interface.","GCG_5755 Error")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.LoadScaleFromLBHS.End
+
+Program.Sub.UpdateNewShipment.Start
+	'Get the weight records for each row in the BDF, and fill in the gross and net weights
+	f.Intrinsic.Control.Try
+		v.Local.sSQL.Declare(String)
+		v.Local.sTemp.Declare(String)
+		v.Local.iCnt.Declare(Long)
+		v.Local.sRet.Declare(string)
+		v.Local.sOrderRec.Declare(String)
+		v.Local.sPckNo.Declare(String)
+		v.Local.fNetWt.Declare(Float)
+		v.Local.fGrossWt.Declare(float)
+		
+		f.Intrinsic.Control.If(v.Caller.Caller,=,"OES099")
+			f.Intrinsic.String.LPad(v.Passed.000003,"0",6,v.Local.sTemp)
+		F.Intrinsic.Control.Else
+			f.Intrinsic.String.LPad(v.Passed.000168,"0",6,v.Local.sTemp)	
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("select order_num, order_line, packlist, sum(gross_wt) as Gross_wt, sum(net_wt) as Net_Wt from gcg_5755_shipinfo where packlist='{0}' group by order_num, order_line, packlist;",v.Local.sTemp,v.Local.sSQL)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Data.DataTable.CreateFromSQL("dtScaleRecs","con",v.Local.sSQL)
+			f.Intrinsic.Control.If(v.DataTable.dtScaleRecs.RowCount,>,0)
+'				f.Intrinsic.UI.Msgbox("Scale records found for this shipment.  Do you want to use them overwrite the gross and net weights on the screen?","Overwrite Weights?",4,v.Local.sRet)
+'				f.Intrinsic.Control.If(v.Local.sRet,=,"6")
+					f.Intrinsic.UI.InvokeWaitDialog("Updating Gross and Net Weights with Scale Data...")
+					'Format the order_rec field value so that table value will match
+					f.Intrinsic.String.RPad(v.DataTable.dtScaleRecs(v.Local.iCnt).order_line!FieldValTrim,"0",4,v.Local.sOrderRec)
+					'Format the packing list field value so that the table value will match
+					f.Intrinsic.String.LPad(v.DataTable.dtScaleRecs(v.Local.iCnt).packlist!FieldValTrim,"0",7,v.Local.sPckNo)
+					'Update the shipment lines with gross and net weights
+					f.Intrinsic.Control.For(v.Local.iCnt,0,v.DataTable.dtScaleRecs.RowCount--,1)
+						f.Intrinsic.String.Build("update shipment_lines set weight={0}, pkgd_weight={1} where order_no='{2}' and order_rec='{3}' and pck_no='{4}' and record_type='L';",v.DataTable.dtScaleRecs(v.Local.iCnt).Net_Wt!FieldVal,v.DataTable.dtScaleRecs(v.Local.iCnt).Gross_Wt!FieldVal,v.DataTable.dtScaleRecs(v.Local.iCnt).order_num!FieldValTrim,v.Local.sOrderRec,v.Local.sPckNo,v.Local.sSQL)
+						f.ODBC.Connection!con.Execute(v.Local.sSQL)
+					f.Intrinsic.Control.Next(v.Local.iCnt)
+					'Update the shipment header with total weights
+					f.Data.DataTable.Compute("dtScaleRecs","Sum(Gross_Wt)","",v.Local.fGrossWt)
+					f.Data.DataTable.Compute("dtScaleRecs","Sum(Net_Wt)","",v.Local.fNetWt)
+					f.Intrinsic.String.Build("update shipment_header set net_weight={0}, weight={1} where pck_no='{2}' and record_type='A';",v.Local.fNetWt.String,v.Local.fGrossWt.String,v.Local.sPckNo,v.Local.sSQL)
+					f.ODBC.Connection!con.Execute(v.Local.sSQL)
+'				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.EndIf
+		f.ODBC.Connection!con.close
+		'f.Data.Datatable.Close("dtShipInfo")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.Finally
+		f.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.Control.EndTry
+Program.Sub.UpdateNewShipment.End
+
+Program.Sub.GsGcBin_CellValueChanged.Start
+	'When cell is clicked, if column index is 0, load the previous weight data from the record
+	f.Intrinsic.Control.If(v.DataTable.dtBin(v.Args.rowindex).Checked!FieldVal,=,False)
+		F.Data.DatATABLE.SetValue("dtBin",V.Args.ROWINDEX,"Checked",True)
+	F.Intrinsic.Control.Else
+		F.Data.DatATABLE.SetValue("dtBin",V.Args.ROWINDEX,"Checked",False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(SetB4Fields)
+	
+	f.Intrinsic.Control.If(v.Args.column,=,"Checked",AND,V.Screen.f_ScaleInteg!txtCaller.TEXT,=,"LOT133GI")
+		f.Intrinsic.Control.CallSub(LoadShipInfo)
+	f.Intrinsic.Control.EndIf
+Program.Sub.GsGcBin_CellValueChanged.End
+
+Program.Sub.LoadShipInfo.Start
+	'Load the scale data for the shipment lot/bin record to the screen
+	v.Local.sFilter.Declare(string)
+	
+	f.Intrinsic.Control.Try
+		'Filter out unchecked rows in the bin grid
+		f.Data.DataView.ToDataTable("dtbin","dvBin","dtBinTemp")
+		f.Data.DataView.Create("dtBinTemp","dvBinTemp",22)
+		f.Data.DataView.SetFilter("dtBinTemp","dvBinTemp","Checked=True and Updated=True")
+		
+		f.Intrinsic.Control.If(v.DataView.dtBinTemp!dvBinTemp.RowCount,>,0)
+			f.Intrinsic.String.Build("Bin='{0}'",v.DataView.dtBinTemp!dvBinTemp(0).Bin_Loc!FieldVal,v.Local.sFilter)
+			f.Data.DataView.SetFilter("dtShipInfo","dvShipInfo",v.Local.sFilter)
+			f.Intrinsic.Control.If(v.DataView.dtShipInfo!dvShipInfo.RowCount,>,0)
+				gui.f_ScaleInteg.txtGrossWt.Text(v.DataView.dtShipInfo!dvShipInfo(0).Gross_Wt!FieldVal)
+				gui.f_ScaleInteg.txtTareWt.Text(v.DataView.dtShipInfo!dvShipInfo(0).Tare_Wt!FieldVal)
+				gui.f_ScaleInteg.txtNetWt.Text(v.DataView.dtShipInfo!dvShipInfo(0).Net_Wt!FieldVal)
+				gui.f_ScaleInteg.txtAPW.Text(v.DataView.dtShipInfo!dvShipInfo(0).APW!FieldVal)
+				gui.f_ScaleInteg.txtQty.Text(v.DataView.dtShipInfo!dvShipInfo(0).QTY!FieldVal)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Close("dtBinTemp","dvBinTemp")
+		f.Data.DataTable.Close("dtBinTemp")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.LoadShipInfo.End
+
+Program.Sub.CheckForScaleRecords.Start
+	'Before lot/bin screen is saved, warn user if there are committed lot/bin records that do not have a corresponding scale record
+	v.Local.iCnt.Declare(long)
+	v.Local.iRowCnt.Declare(long)
+	v.Local.sTemp.Declare(string)
+	v.Local.sSQL.Declare(string)
+	v.Local.sFilePath.Declare(string)
+	v.Local.bExists.Declare(boolean)
+	v.Local.sOrderNo.Declare(String)
+	v.Local.sOrderLine.Declare(String)
+	v.Local.sPckNo.Declare(String)
+	v.Local.iRet.Declare(Long)
+	
+	f.Intrinsic.Control.Try
+		'Load BDF and get count of records being issued
+		f.Intrinsic.BDF.Load("AUX001","AUX001")
+		f.Intrinsic.BDF.ReadRowCount("AUX001",v.Local.iRowCnt)
+		f.Intrinsic.Math.Sub(v.Local.iRowCnt,1,v.Local.iRowCnt)
+		f.Data.DataTable.Create("dtBin",True)
+		f.Data.DataTable.AddColumn("dtBin","Bin","string")
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.iRowCnt,1)
+			f.Intrinsic.BDF.ReadRow("AUX001",v.Local.iCnt,v.Local.sTemp)
+			f.Intrinsic.string.Split(v.Local.sTemp,"|~|",v.Local.sTemp)
+			f.Intrinsic.Control.If(v.Local.sTemp(6),>,0)
+				f.Data.DataTable.AddRow("dtBin","Bin",v.Local.sTemp(2))
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Data.DataView.Create("dtBin","dvBin",22)
+		f.Data.DataView.ToString("dtBin","dvBin","Bin","","','",v.Local.sTemp)
+		
+		'Get the packing list number
+		f.Intrinsic.String.Build("{0}{1}GCG_5755_Temp.txt",v.Caller.LocalGSSTempDir,v.Caller.Terminal,v.Local.sFilePath)
+		f.Intrinsic.File.Exists(v.Local.sFilePath,v.Local.bExists)
+		f.Intrinsic.Control.if(v.Local.bExists)
+			F.Intrinsic.File.File2String(v.Local.sFilePath,v.Local.sPckNo)
+		f.Intrinsic.Control.EndIf
+		'Format the order num
+		f.Intrinsic.String.LPad(v.Passed.000019,"0",7,v.Local.sOrderNo)
+		'Format the order line num
+		f.Intrinsic.String.LPad(v.Passed.000022,"0",3,v.Local.sOrderLine)
+		'Query the count of scale records that have been saved, and see if that matches.  If not, warn user.
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Intrinsic.String.Build("select count(*) from gcg_5755_shipinfo where packlist='{0}' and order_num='{1}' and order_line='{2}';",v.Local.sPckNo,v.Local.sOrderNo,v.Local.sOrderLine,v.Local.sSQL)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.iRet)
+		f.ODBC.Connection!con.close
+		
+		f.Intrinsic.Control.If(v.DataTable.dtBin.RowCount,>,v.Local.iRet)
+			f.Intrinsic.UI.Msgbox("Warning: Some lot/bin records have not been weighed in this shipment.","Error >> Mismatched Qtys")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.CheckForScaleRecords.End
+
+Program.Sub.GsGcBin_RowCellClick.Start
+	'When cell is clicked, if column index is 0, load the previous weight data from the record
+	v.Local.bVal.Declare(Boolean)
+	f.Intrinsic.Control.If(v.Args.column,=,"Checked",AND,V.Screen.f_ScaleInteg!txtCaller.TEXT,=,V.Caller.Caller)
+		f.Intrinsic.Control.If(v.dataview.dtBin!dvBin(v.Args.rowindex).Checked!FieldVal,=,False)
+			F.Data.DatATABLE.SetValue("dtBin",v.dataview.dtBin!dvBin(v.Args.rowindex).datatableindex,"Checked",True)
+			f.Intrinsic.Control.CallSub(LoadShipInfo)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+Program.Sub.GsGcBin_RowCellClick.End
+
+Program.Sub.CheckTerminal.Start
+	'See if the terminal is in the list of registered terminals for this project.  Terminate if not.
+	f.Intrinsic.Control.Try
+		v.Local.iCnt.Declare(Long)
+		v.Local.sSQL.Declare(String)
+		f.ODBC.Connection!con.opencompanyconnection
+			f.Intrinsic.String.Build("select count(*) from gcg_5755_terminals where trmnl='{0}';",v.Caller.Terminal,v.Local.sSQL)
+			f.ODBC.Connection!con.ExecuteAndReturn(v.Local.sSQL,v.Local.iCnt)
+		f.ODBC.Connection!con.close
+		
+		f.Intrinsic.Control.If(v.Local.iCnt,=,0)
+			f.Intrinsic.Control.End
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.CheckTerminal.End
+
+Program.Sub.ddlViewMode_SelectedIndexChanged.Start
+	f.Intrinsic.Control.Try
+		v.Local.sFilter.Declare(String)
+		'If user has selected EMPTY, only show bins where TotalQtys = 0.  Else, show qty's > 0.
+		f.Intrinsic.Control.If(v.datatable.dtBin.Exists,=,True)
+			f.Intrinsic.Control.If(v.Screen.f_ScaleInteg!ddlViewMode.Text,=,"EMPTY")
+				f.Data.DataView.SetFilter("dtbin","dvBin","TotalQtys=0")
+			f.Intrinsic.Control.Else
+				f.Data.DataView.SetFilter("dtbin","dvBin","TotalQtys>0")
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.ddlViewMode_SelectedIndexChanged.End
+
+Program.Sub.cmdGetScaleWt_B4_Click.Start
+	'Interface with the scale and get the weight
+	f.Intrinsic.Control.Try
+		gui.f_ScaleInteg.cmdGetScaleWt_b4.Enabled(False)
+		f.Intrinsic.Control.If(v.Caller.User,=,"SUPERVSR")
+			f.Intrinsic.Control.CallSub(GetScaleWeight,"QtyField","txtQty_B4","GrossWtField","txtGrossWt_B4","TareWtField","txtTareWt_B4","NetWtField","txtNetWt_B4","APWField","txtAPW_B4","WtBtnPushed","cmdGetScaleWt_B4")
+			'f.Intrinsic.Control.CallSub(GetScaleWeightTest,"QtyField","txtQty_B4","GrossWtField","txtGrossWt_B4","TareWtField","txtTareWt_B4","NetWtField","txtNetWt_B4","APWField","txtAPW_B4","WtBtnPushed","cmdGetScaleWt_B4")
+		F.Intrinsic.Control.Else
+			f.Intrinsic.Control.CallSub(GetScaleWeight,"QtyField","txtQty_B4","GrossWtField","txtGrossWt_B4","TareWtField","txtTareWt_B4","NetWtField","txtNetWt_B4","APWField","txtAPW_B4","WtBtnPushed","cmdGetScaleWt_B4")
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Finally
+		gui.f_ScaleInteg.cmdGetScaleWt_b4.Enabled(True)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdGetScaleWt_B4_Click.End
+
+Program.Sub.SetB4Fields.Start
+	f.Intrinsic.Control.Try
+		'If an empty bin is selected, hide the B4 fields
+		f.Data.DataView.Create("dtbin","dvBinSelected",22,"Checked=True and TotalQtys=0","")
+		
+		f.Intrinsic.Control.If(v.DataView.dtBin!dvBinSelected.RowCount,>,0)
+			gui.f_ScaleInteg.frmB4Fields.visible(False)
+		f.Intrinsic.Control.else
+			gui.f_ScaleInteg.frmB4Fields.visible(True)
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.DataView.Close("dtbin","dvBinSelected")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.SetB4Fields.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$dduncan$}$20201014143932272$}$r0o+00bj735YsiGsQ60YIo/Zb+26OZQGKklA7jw5r2OJ9tZ9C9nRehU0Uke9b9B4E+Lt5IoKupg=
+Program.Sub.Comments.End
