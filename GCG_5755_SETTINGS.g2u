@@ -1,0 +1,74 @@
+Program.Sub.ScreenSU.Start
+Gui.f_Settings..Create
+Gui.f_Settings..Caption("GCG 5755 Settings")
+Gui.f_Settings..Size(3585,2520)
+Gui.f_Settings..MinX(0)
+Gui.f_Settings..MinY(0)
+Gui.f_Settings..Position(0,0)
+Gui.f_Settings..BackColor(-2147483633)
+Gui.f_Settings..MaxButton(False)
+Gui.f_Settings..MinButton(False)
+Gui.f_Settings..MousePointer(0)
+Gui.f_Settings..Sizeable(False)
+Gui.f_Settings..Event(UnLoad,f_Settings_UnLoad)
+Gui.f_Settings.lbl1.Create(Label,"APW %",True,1185,255,0,450,375,True,0,"Arial",12,-2147483633,0)
+Gui.f_Settings.txtAPW.Create(TextBox,"",True,1110,390,0,1755,240,True,0,"Arial",12,-2147483643,1)
+Gui.f_Settings.cmdOK.Create(Button)
+Gui.f_Settings.cmdOK.Size(1140,375)
+Gui.f_Settings.cmdOK.Position(420,1275)
+Gui.f_Settings.cmdOK.Caption("OK")
+Gui.f_Settings.cmdOK.FontSize(12)
+Gui.f_Settings.cmdOK.Event(Click,cmdOK_Click)
+Gui.f_Settings.cmdCancel.Create(Button)
+Gui.f_Settings.cmdCancel.Size(1140,375)
+Gui.f_Settings.cmdCancel.Position(1740,1275)
+Gui.f_Settings.cmdCancel.Caption("Cancel")
+Gui.f_Settings.cmdCancel.FontSize(12)
+Gui.f_Settings.cmdCancel.Event(Click,cmdCancel_Click)
+Gui.f_Settings.lblStatus.Create(Label,"Settings saved successfully.",False,2505,255,0,555,1785,True,0,"Arial",8,-2147483633,0)
+Gui.f_Settings.lblStatus.ForeColor(2263842)
+Gui.f_Settings.lbl2.Create(Label,"COM Port",True,1185,255,0,450,870,True,0,"Arial",12,-2147483633,0)
+Gui.f_Settings.txtCOMPort.Create(TextBox,"",True,1110,390,0,1755,735,True,0,"Arial",12,-2147483643,1)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'	Author: Daniel Duncan
+'	Customer: Alco Manufacturing
+'	Program Name: Scale Integration
+'	Date Started: 12/1/2019
+'	Description: This script allows the user to set the settings needed for the scale integration portion of the project to run: the COM port to use, and the acceptable APW percentage (the calculated APW must fall within the percentage of the APW on the part master [Weight field in this project's case]).  Both of these settings are global, not user-specific.
+'	Quote: 
+'	GAP: 5755
+	f.Intrinsic.Control.CallSub(GetSettings)
+	gui.f_Settings..show
+Program.Sub.Main.End
+
+Program.Sub.f_Settings_UnLoad.Start
+	F.Intrinsic.Control.End
+Program.Sub.f_Settings_UnLoad.End
+
+Program.Sub.cmdOK_Click.Start
+	F.Global.Registry.AddValue(0,V.Caller.CompanyCode,"APW_Perc",5755,1000,False,v.Screen.f_Settings!txtAPW.text,False,0,-999.0,1/1/1980,12:00:00 AM)
+	F.Global.Registry.AddValue(0,"TST","COM_PORT",5755,2000,False,v.Screen.f_Settings!txtCOMPort.text,False,0,-999.0,1/1/1980,12:00:00 AM)
+	gui.f_Settings.lblStatus.Visible(True)
+Program.Sub.cmdOK_Click.End
+
+Program.Sub.cmdCancel_Click.Start
+	F.Intrinsic.Control.End
+Program.Sub.cmdCancel_Click.End
+
+Program.Sub.GetSettings.Start
+	v.Local.sRet.Declare(string)
+	F.Global.Registry.ReadValue(0,V.Caller.CompanyCode,"APW_Perc",5755,1000,5,"",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,!=,"")
+		gui.f_Settings.txtAPW.Text(v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+	
+	F.Global.Registry.ReadValue(0,"TST","COM_PORT",5755,2000,5,"",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,!=,"")
+		gui.f_Settings.txtCOMPort.Text(v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+Program.Sub.GetSettings.End
