@@ -1,0 +1,49 @@
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+f.Intrinsic.Control.Try
+'BN, Nov 2019	(Repurposed by Daniel Duncan from Project 5694)
+'This program will delete the WIP BIN Seq when the Job Seq is closed
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.sJobList.Declare
+	
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Data.DataTable.CreateFromSQL("ToDel","conx","Select Job,Suffix,Sequence,Job + '-' + Suffix as JS,'' as Flag_Closed from v_WIP_BIN",True)
+	f.Data.Dictionary.CreateFromSQL("flgDict","conx","Select Job + '-' + Suffix as JS, if(date_closed='1900-01-01','','Y') as Flag_Closed from v_Job_header")
+	f.Data.Dictionary.SetDefaultReturn("flgDict","")
+	f.Data.DataTable.FillFromDictionary("ToDel","flgDict","JS","Flag_Closed")
+	f.Data.DataView.Create("ToDel","dvToDel",22,"Isnull([FLAG_CLOSED],'') = 'Y'","")
+	F.Data.DataView.ToDataTableDistinct("ToDel","dvToDel","JobList","JS",True)
+	f.Data.DataView.Create("JobList","dvJobList")
+	f.Data.DataView.ToString("JobList","dvJobList","JS","","','",v.Local.sJobList)
+	f.Intrinsic.String.Build("Delete from WIP_BIN where Job + '-' + Suffix in ('{0}')",v.Local.sJobList,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.CallSub("Unload")
+
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.Unload.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+
+	F.Intrinsic.Control.If(V.ODBC.conx.State,=,1)
+		F.ODBC.Connection!conx.close
+	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End	
+F.Intrinsic.Control.EndTry
+Program.Sub.Unload.End
