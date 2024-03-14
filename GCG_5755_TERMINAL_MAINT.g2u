@@ -1,0 +1,381 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_MoveTicket..create(BaseForm)
+Gui.F_MoveTicket..caption("Terminal Maintenance for Scale Interface")
+Gui.F_MoveTicket..size(10245,6900)
+Gui.F_MoveTicket..minx(0)
+Gui.F_MoveTicket..miny(0)
+Gui.F_MoveTicket..position(0,0)
+Gui.F_MoveTicket..event(UnLoad,form1_unload)
+Gui.F_MoveTicket..forecolor(0)
+Gui.F_MoveTicket..BackColor(-2147483633)
+Gui.F_MoveTicket..mousepointer(0)
+Gui.F_MoveTicket..AlwaysOnTop(False)
+Gui.F_MoveTicket..FontName("Tahoma")
+Gui.F_MoveTicket..FontSize(8.25)
+Gui.F_MoveTicket..ControlBox(True)
+Gui.F_MoveTicket..MaxButton(False)
+Gui.F_MoveTicket..MinButton(True)
+Gui.F_MoveTicket..Moveable(True)
+Gui.F_MoveTicket..Sizeable(False)
+Gui.F_MoveTicket..ShowInTaskBar(True)
+Gui.F_MoveTicket..TitleBar(True)
+Gui.F_MoveTicket.txtTrmnl.create(textbox,"",True,855,300,0,390,600,True,0,"Arial",8,-2147483643,1)
+Gui.F_MoveTicket.txtTrmnl.defaultvalue("")
+Gui.F_MoveTicket.txtTrmnl.tabstop(True)
+Gui.F_MoveTicket.txtTrmnl.tabindex(1)
+Gui.F_MoveTicket.txtTrmnl.MaxLength(3)
+Gui.F_MoveTicket.lbl1.create(label,"Terminal",True,600,210,1,390,390,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_MoveTicket.lbl1.defaultvalue("")
+Gui.F_MoveTicket.lbl1.BorderStyle(0)
+Gui.F_MoveTicket.lbl2.create(label,"Comments",True,750,210,1,1455,390,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_MoveTicket.lbl2.defaultvalue("")
+Gui.F_MoveTicket.lbl2.BorderStyle(0)
+Gui.F_MoveTicket.cmdAdd.create(button)
+Gui.F_MoveTicket.cmdAdd.caption("Add/Update")
+Gui.F_MoveTicket.cmdAdd.size(1125,375)
+Gui.F_MoveTicket.cmdAdd.position(390,1050)
+Gui.F_MoveTicket.cmdAdd.event(Click,cmdadd_click)
+Gui.F_MoveTicket.cmdAdd.defaultvalue("")
+Gui.F_MoveTicket.cmdAdd.tabstop(True)
+Gui.F_MoveTicket.cmdAdd.tabindex(5)
+Gui.F_MoveTicket.cmdAdd.Enabled(True)
+Gui.F_MoveTicket.cmdAdd.Visible(True)
+Gui.F_MoveTicket.cmdAdd.Zorder(0)
+Gui.F_MoveTicket.cmdAdd.FontName("Tahoma")
+Gui.F_MoveTicket.cmdAdd.FontSize(8.25)
+Gui.F_MoveTicket.cmdDelete.create(button)
+Gui.F_MoveTicket.cmdDelete.caption("Delete")
+Gui.F_MoveTicket.cmdDelete.size(855,375)
+Gui.F_MoveTicket.cmdDelete.position(2530,1045)
+Gui.F_MoveTicket.cmdDelete.event(Click,cmddelete_click)
+Gui.F_MoveTicket.cmdDelete.defaultvalue("")
+Gui.F_MoveTicket.cmdDelete.tabstop(True)
+Gui.F_MoveTicket.cmdDelete.tabindex(8)
+Gui.F_MoveTicket.cmdDelete.Enabled(True)
+Gui.F_MoveTicket.cmdDelete.Visible(True)
+Gui.F_MoveTicket.cmdDelete.Zorder(0)
+Gui.F_MoveTicket.cmdDelete.FontName("Tahoma")
+Gui.F_MoveTicket.cmdDelete.FontSize(8.25)
+Gui.F_MoveTicket.txtComment.create(textbox,"",True,4665,300,0,1455,600,True,0,"Arial",8,-2147483643,1)
+Gui.F_MoveTicket.txtComment.defaultvalue("")
+Gui.F_MoveTicket.txtComment.tabstop(True)
+Gui.F_MoveTicket.txtComment.tabindex(2)
+Gui.F_MoveTicket.cmdClear.create(button)
+Gui.F_MoveTicket.cmdClear.caption("Clear")
+Gui.F_MoveTicket.cmdClear.size(855,375)
+Gui.F_MoveTicket.cmdClear.position(1590,1050)
+Gui.F_MoveTicket.cmdClear.event(Click,cmdclear_click)
+Gui.F_MoveTicket.cmdClear.defaultvalue("")
+Gui.F_MoveTicket.cmdClear.tabstop(True)
+Gui.F_MoveTicket.cmdClear.tabindex(7)
+Gui.F_MoveTicket.cmdClear.Enabled(True)
+Gui.F_MoveTicket.cmdClear.Visible(True)
+Gui.F_MoveTicket.cmdClear.Zorder(0)
+Gui.F_MoveTicket.cmdClear.FontName("Tahoma")
+Gui.F_MoveTicket.cmdClear.FontSize(8.25)
+Gui.F_MoveTicket.GsGcTerminals.Create(GsGridControl)
+Gui.F_MoveTicket.GsGcTerminals.Enabled(True)
+Gui.F_MoveTicket.GsGcTerminals.Visible(True)
+Gui.F_MoveTicket.GsGcTerminals.Zorder(0)
+Gui.F_MoveTicket.GsGcTerminals.Size(9420,4365)
+Gui.F_MoveTicket.GsGcTerminals.Position(405,1635)
+Gui.F_MoveTicket.GsGcTerminals.Event(RowClick,GsGcTerminals_RowClick)
+Program.Sub.ScreenSU.End
+Program.Sub.Preflight.Start
+	V.Global.iOrdinal.Declare(Long, 0)
+	
+	V.Global.sKey.Declare(String)
+	
+Program.Sub.Preflight.End
+
+' DD - 6/30/2020 - This script is a pared down copy of the Move Ticket Maintenance project 5918.  I removed the printer fields and changed the table name where the terminals and comments are stored.
+
+
+'-----APPROVED LOGIC------
+Program.Sub.Main.Start
+	F.Intrinsic.Control.SetErrorHandler("Main_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		
+		'open ODBC connection
+		f.ODBC.Connection!Con.opencompanyconnection
+		
+		'look for existing records and load list view
+		'F.Intrinsic.Control.CallSub(Buildlistview)
+		
+		'Build datatable of existing records
+		f.Intrinsic.Control.CallSub(LoadDT)
+		
+		'show screen
+		Gui.F_MoveTicket..Show
+		
+		F.Intrinsic.Control.ExitSub
+		
+	F.Intrinsic.Control.Label("Main_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.Main.End
+Program.Sub.form1_unload.Start
+	F.Intrinsic.Control.SetErrorHandler("form1_unload_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		
+		'close ODBC connection and end program
+		F.ODBC.Connection!Con.Close
+		F.Intrinsic.Control.End
+		
+		F.Intrinsic.Control.ExitSub
+	
+	F.Intrinsic.Control.Label("form1_unload_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+	
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.form1_unload.End
+Program.Sub.cmddelete_click.Start
+	F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+	F.Intrinsic.Control.ClearErrors
+		
+		V.Local.sError.Declare(String)
+		V.Local.sDelete.Declare(String)
+		v.Local.iRow.Declare(Long)
+		
+		'delete the record from the table
+		F.Intrinsic.String.Build("DELETE FROM GCG_5755_TERMINALS WHERE TRMNL = '{0}' ",V.Screen.F_MoveTicket!txtTrmnl.Text,V.Local.sDelete)
+		F.ODBC.Connection!Con.Execute(V.Local.sDelete)
+		
+		'remove the line from the datatable
+		f.Intrinsic.String.Build("TRMNL='{0}'",V.Screen.F_MoveTicket!txtTrmnl.Text,V.Local.sDelete)
+		f.Data.DataTable.Select("dtTerminals",V.Local.sDelete,V.Local.iRow)
+		f.Data.DataTable.DeleteRow("dtTerminals",v.local.iRow)
+		'Gui.F_MoveTicket.lvw1.RemoveItem(V.Global.sKey)
+		'call sub to clear text boxes
+		F.Intrinsic.Control.CallSub(Cmdclear_click)
+		
+		F.Intrinsic.Control.ExitSub
+	
+	F.Intrinsic.Control.Label("cmddelete_click_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.cmddelete_click.End
+Program.Sub.cmdadd_click.Start
+	F.Intrinsic.Control.SetErrorHandler("cmdadd_click_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		V.Local.sTrmnl.Declare(String)
+		V.Local.Sel.Declare(String)
+		
+		
+		F.Intrinsic.Control.If(v.Screen.F_MoveTicket!txtComment.Text,=,"")
+			F.Intrinsic.UI.Msgbox("Comment must be entered")
+			F.Intrinsic.Control.ExitSub
+		F.Intrinsic.Control.EndIf
+		
+		'format terminal to 3 characters
+		V.Local.sTrmnl.Set(V.Screen.F_MoveTicket!txtTrmnl.Text)
+		F.Intrinsic.String.LPad(V.Local.sTrmnl.Trim,"0",3,V.Local.sTrmnl)
+		
+		'add record to table
+		F.Intrinsic.String.Build("SELECT * FROM GCG_5755_TERMINALS WHERE TRMNL = '{0}' ",V.Local.sTrmnl.Trim,V.Local.Sel)
+		F.ODBC.Connection!Con.OpenRecordsetRW("rstX",V.Local.Sel)
+		'if record does not already exists for the entered terminal, add a new record
+		F.Intrinsic.Control.If(V.ODBC.Con!rstX.EOF,=,True)
+			F.ODBC.Con!rstX.AddNew
+			F.ODBC.Con!rstX.Set!TRMNL(V.Local.sTrmnl.Trim)
+		F.Intrinsic.Control.endif
+		'otherwise, just update the comment
+		F.ODBC.Con!rstX.Set!COMMENTS(V.Screen.F_MoveTicket!txtComment.Text)
+		F.ODBC.Con!rstX.Update
+		F.ODBC.Con!rstX.Close
+		
+		'Gui.F_MoveTicket.lvw1.ClearItems
+		'F.Intrinsic.Control.CallSub(Buildlistview)
+		F.Intrinsic.Control.CallSub(ReloadDT)
+		
+		'call sub to clear the text boxes
+		F.Intrinsic.Control.CallSub(Cmdclear_click)
+		
+		F.Intrinsic.Control.ExitSub
+	
+	F.Intrinsic.Control.Label("cmdadd_click_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.cmdadd_click.End
+Program.Sub.GsGcTerminals_RowClick.Start
+	F.Intrinsic.Control.SetErrorHandler("lvw1_click_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		V.Local.sRet.Declare(String)
+		V.Local.iOrd.Declare(Long)
+		
+		'get the item key
+		F.Intrinsic.String.LPad(V.DataTable.dtTerminals(v.Args.rowindex).TRMNL!FieldVal,"0",3,v.Global.sKey)
+		v.Global.iOrdinal.Set(v.Args.rowindex)
+
+		'write values to text boxes
+		Gui.F_MoveTicket.txtTrmnl.Text(V.datatable.dtTerminals(v.Args.rowindex).TRMNL!FieldVal)
+		Gui.F_MoveTicket.txtComment.Text(V.datatable.dtTerminals(v.Args.rowindex).COMMENTS!FieldVal)
+		
+		F.Intrinsic.Control.ExitSub
+		
+	F.Intrinsic.Control.Label("lvw1_click_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+Program.Sub.GsGcTerminals_RowClick.End
+Program.Sub.cmdclear_click.Start
+	F.Intrinsic.Control.SetErrorHandler("cmdclear_click_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		
+		'clear text boxes
+		Gui.F_MoveTicket.txtComment.Text("")
+		Gui.F_MoveTicket.txtTrmnl.Text("")
+		
+		F.Intrinsic.Control.ExitSub
+	
+	F.Intrinsic.Control.Label("cmdclear_click_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.cmdclear_click.End
+Program.Sub.ReloadDT.Start
+	'Refresh datatable
+	f.Intrinsic.Control.Try
+		f.Data.DataTable.CreateFromSQL("dtTerminalsTemp","con","SELECT * FROM GCG_5755_TERMINALS")
+		
+		f.Data.DataTable.DeleteRow("dtTerminals")
+		f.Data.DataTable.AcceptChanges("dtTerminals")
+		f.Data.DataTable.Merge("dtTerminalsTemp","dtTerminals",False,2)
+		f.Data.DataTable.Close("dtTerminalsTemp")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.ReloadDT.End
+Program.Sub.LoadDT.Start
+	'Initial load of the datatable and creation of gridview
+	f.Intrinsic.Control.Try
+		f.Data.DataTable.CreateFromSQL("dtTerminals","con","SELECT * FROM GCG_5755_TERMINALS",True)
+		
+		gui.F_MoveTicket.GsGcTerminals.AddGridviewFromDatatable("gvTerminals","dtTerminals")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","TRMNL","Caption","Terminal")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","TRMNL","HeaderHAlignment","Center")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","TRMNL","CellHAlignment","Center")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","COMMENTS","Caption","Comments")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","COMMENTS","HeaderHAlignment","Center")
+		GUI.F_MoveTicket.GsGcTerminals.SetColumnProperty("gvTerminals","COMMENTS","CellHAlignment","Center")
+		gui.F_MoveTicket.GsGcTerminals.SetGridviewProperty("gvTerminals","multiselect",False)
+		gui.F_MoveTicket.GsGcTerminals.SetGridviewProperty("gvTerminals","Editable",False)
+		gui.F_MoveTicket.GsGcTerminals.SetGridviewProperty("gvTerminals","Readonly",True)
+		gui.F_MoveTicket.GsGcTerminals.MainView("gvTerminals")
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.LoadDT.End
+
+'-----LOGIC TO REVIEW-----
+
+'------DISCARDED LOGIC----
+Program.Sub.lvw1_click.Start
+	F.Intrinsic.Control.SetErrorHandler("lvw1_click_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		V.Local.sRet.Declare(String)
+		V.Local.iOrd.Declare(Long)
+		
+		'get the item key
+		Gui.F_MoveTicket.lvw1.RetrieveSelectedListItems(V.Local.iOrd)
+			F.Intrinsic.String.LPad(V.Local.iOrd,"0",3,V.Global.sKey)
+		'get the item ordinal
+		Gui.F_MoveTicket.lvw1.RetrieveItemOrdinal(V.Global.sKey,V.Global.iOrdinal)
+		
+		'get the line of text
+		V.Local.sRet.Set(V.Screen.F_MoveTicket!lvw1.ListItemTextExtended(V.Global.iOrdinal))
+		'split to get trmnl and comment
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		'write values to text boxes
+		Gui.F_MoveTicket.txtTrmnl.Text(V.Local.sRet(0).Trim)
+		Gui.F_MoveTicket.txtComment.Text(V.Local.sRet(1).Trim)
+		
+		F.Intrinsic.Control.ExitSub
+		
+	F.Intrinsic.Control.Label("lvw1_click_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.lvw1_click.End
+Program.Sub.BuildListView.Start
+	F.Intrinsic.Control.SetErrorHandler("BuildListView_Err")
+	F.Intrinsic.Control.ClearErrors
+	
+		V.Local.sError.Declare(String)
+		
+		'look for existing records and load list view
+		'F.ODBC.Connection!Con.OpenLocalRecordsetRW("rstX","SELECT * FROM PPT_5918_MV_TCKT_SU")
+		F.ODBC.Connection!Con.OpenLocalRecordsetRW("rstX","SELECT * FROM GCG_5755_TERMINALS")
+		F.Intrinsic.Control.DoUntil(V.ODBC.Con!rstX.EOF,=,True)
+			Gui.F_MoveTicket.lvw1.AddListItem(V.ODBC.Con!rstX.FieldValTrim!TRMNL,V.ODBC.Con!rstX.FieldValTrim!TRMNL)
+			Gui.F_MoveTicket.lvw1.SetListItemSubItemText(V.ODBC.Con!rstX.FieldValTrim!TRMNL,1,V.ODBC.Con!rstX.FieldValTrim!COMMENTS)
+		F.ODBC.Con!rstX.MoveNext
+		F.Intrinsic.Control.Loop
+		F.ODBC.Con!rstX.Close
+		
+		F.Intrinsic.Control.ExitSub
+	
+	F.Intrinsic.Control.Label("BuildListView_Err")
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	
+		F.Intrinsic.String.Concat("Project: GCG_5755_TERMINAL_MAINT.g2u", V.Ambient.Newline, V.Ambient.Newline, "Subroutine: ", V.Ambient.CurrentSubroutine, V.Ambient.NewLine, "Error Occurred ", V.Ambient.ErrorNumber, " with description ", V.Ambient.ErrorDescription, V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.CallSub(Form1_unload)
+		
+	F.Intrinsic.Control.EndIf
+
+Program.Sub.BuildListView.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$dduncan$}$20200630073226983$}$r0o+00bj735YsiGsQ60YIo/Zb+26OZQG8knhm2jlN1k/8iQnnxZ6cbUbXidC19oDfxmE3Tj+Lbw=
+Program.Sub.Comments.End
